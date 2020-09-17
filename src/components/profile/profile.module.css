@@ -1,0 +1,24 @@
+@media (min-width: 700px) {
+  .img {
+    width: 300px;
+    border-radius: 5px;
+    border: solid black 5px;
+  }
+}
+
+@media (max-width: 699px) {
+    .img {
+      width: 250px;
+      border-radius: 5px;
+      border: solid black 5px;
+    }
+  }
+@media (max-width: 400px) {
+    .img {
+      width: 150px;
+      border-radius: 5px;
+      border: solid black 5px;
+    }
+  }
+
+
