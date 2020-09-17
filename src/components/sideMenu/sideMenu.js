@@ -29,13 +29,11 @@ const SideMenu = props => {
 
     return (
         <div className={showMenu ? styles.menu : classnames(styles.menu, styles.hide)}>
-            <Centralizer column>
                 <div className={styles.div}>
                     <a href={"/"} className={styles.link1} to="/contact">Contact</a>
                     <a href={"/"} className={styles.link2} to="/contact">Bio</a>
                     <a href={"/"} className={styles.link3} to="/contact">Work</a>
                 </div>
-            </Centralizer>
         </div>
     )
 }
