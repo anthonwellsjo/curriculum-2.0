@@ -8,7 +8,6 @@ const Skills = props => {
 
 
 
-
     return (
         <div className={classes.div}>
             <h2>Skills</h2>
@@ -18,7 +17,7 @@ const Skills = props => {
                 </Col>
                 <Col>
                     <div className={classes.progress}>
-                        <ProgressMeter tot="45"/>
+                        <ProgressMeter in={props.showAnim} tot={75}/>
                     </div>
                 </Col>
             </Row>
@@ -28,7 +27,7 @@ const Skills = props => {
                 </Col>
                 <Col>
                     <div className={classes.progress}>
-                        <ProgressMeter tot={45} />
+                        <ProgressMeter in={props.showAnim} tot={50} />
                     </div>
                 </Col>
             </Row>
@@ -38,7 +37,7 @@ const Skills = props => {
                 </Col>
                 <Col>
                     <div className={classes.progress}>
-                        <ProgressMeter />
+                        <ProgressMeter in={props.showAnim} tot={65}/>
                     </div>
                 </Col>
             </Row>
@@ -48,7 +47,7 @@ const Skills = props => {
                 </Col>
                 <Col>
                     <div className={classes.progress}>
-                        <ProgressMeter />
+                        <ProgressMeter in={props.showAnim} tot={70}/>
                     </div>
                 </Col>
             </Row>
@@ -58,7 +57,37 @@ const Skills = props => {
                 </Col>
                 <Col>
                     <div className={classes.progress}>
-                        <ProgressMeter />
+                        <ProgressMeter in={props.showAnim} tot={75}/>
+                    </div>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <h4>Gatsby.js</h4>
+                </Col>
+                <Col>
+                    <div className={classes.progress}>
+                        <ProgressMeter in={props.showAnim} tot={65}/>
+                    </div>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <h4>Xamarin</h4>
+                </Col>
+                <Col>
+                    <div className={classes.progress}>
+                        <ProgressMeter in={props.showAnim} tot={55}/>
+                    </div>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <h4>Xamarin</h4>
+                </Col>
+                <Col>
+                    <div className={classes.progress}>
+                        <ProgressMeter in={props.showAnim} tot={55}/>
                     </div>
                 </Col>
             </Row>

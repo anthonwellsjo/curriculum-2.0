@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import Menu from "../components/menu/menu"
 import Profile from '../components/profile/profile'
-import { Container, Paper } from '@material-ui/core'
+import { Container, Divider, Paper } from '@material-ui/core'
 import Centralizer from '../components/centralizer/centralizer';
 import Skills from "../components/skills/skills";
 import MobileMenu from "../components/mobileMenu/mobileMenu";
@@ -14,22 +14,24 @@ export default function Home() {
   let skills = useRef();
   const [showProfile, setShowProfile] = useState(true)
   const [showSkills, setShowSkills] = useState(false);
+  const [showSkillsAnim, setShowSkillsAnim] = useState(false);
 
   const hideOrShowElement = (position, type) => {
 
     switch (type) {
       case "skills": {
-        if (position.top < (window.innerHeight ) && position.bottom >= 200) {
+        if (position.top < (window.innerHeight) && position.bottom >= 200) {
           setShowSkills(true);
-        } else if(showSkills == true) {
+          setShowSkillsAnim(true);
+        } else if (showSkills == true) {
           setShowSkills(false);
         }
         break;
       }
       case "profile": {
-        if (position.top < (window.innerHeight ) && position.bottom >= 200) {
+        if (position.top < (window.innerHeight) && position.bottom >= 200) {
           setShowProfile(true);
-        } else if(showProfile == true) {
+        } else if (showProfile == true) {
           setShowProfile(false);
         }
         break;
@@ -50,76 +52,43 @@ export default function Home() {
       hideOrShowElement(profilePosition, "profile");
 
     })
-  },[])
-
+  }, [])
 
   return (
     <React.Fragment>
-      <Container fluid maxWidth="md">
-        <Paper elevation={3}>
-          <Container fluid maxWidth="md">
-            <Centralizer column>
-              <Menu />
-              {/* <SideMenu /> */}
-              <MobileMenu />
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <ComponentAnimation in={showProfile}>
-                <Paper elevation={2}>
-                  <Container ref={profile} fluid maxWidth="md">
-                    <Profile />
-                  </Container>
-                </Paper>
-              </ComponentAnimation>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <hr />
-              <ComponentAnimation in={showSkills}>
-                <Paper elevation={2}>
-                  <Container ref={skills} fluid maxWidth="md">
-                    <Skills />
-                  </Container>
-                </Paper>
-              </ComponentAnimation>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-            </Centralizer>
-          </Container>
-        </Paper>
-      </Container>
+      <Centralizer column>
+        <div style={{ width: "95%" }}>
+          <Centralizer column>
+            <Menu />
+          </Centralizer>
+          {/* <SideMenu /> */}
+          <MobileMenu />
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <ComponentAnimation in={showProfile}>
+            <div ref={profile} style={{ textAlign: "center", width: "100%", backgroundColor: "#c15640" }}>
+              <Centralizer column>
+                <Profile />
+              </Centralizer>
+            </div>
+          </ComponentAnimation>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <ComponentAnimation in={showSkills}>
+            <div ref={skills} style={{ textAlign: "center", width: "100%", backgroundColor: "#0878a4" }}>
+              <Centralizer column>
+                <Skills showAnim={showSkillsAnim} />
+              </Centralizer>
+            </div>
+          </ComponentAnimation>
+        </div>
+      </Centralizer>
     </React.Fragment >
   )
 }

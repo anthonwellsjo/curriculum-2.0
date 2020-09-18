@@ -1,21 +1,22 @@
 .img {
   border-radius: 5px;
   border: solid black 2px;
+  margin-bottom: 50px;
 }
 
 @media (min-width: 700px) {
   .img {
-    width: 300px;
+    width: 250px;
   }
 }
 
 @media (max-width: 699px) {
   .img {
-    width: 250px;
+    width: 200px;
   }
 }
 @media (max-width: 400px) {
   .img {
-    width: 150px;
+    width: 100px;
   }
 }

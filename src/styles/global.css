@@ -1,5 +1,11 @@
-h1, h2, h3, a {
+h1, h2, h3, h4 {
     font-family: playfair display;
+    font-weight: 300;
+}
+a {
+    font-family: playfair display;
+    font-weight: 300;
+    font-size: large;
 }
 
 ul {
@@ -8,4 +14,8 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+body {
+    background-color: #edd170;
 }

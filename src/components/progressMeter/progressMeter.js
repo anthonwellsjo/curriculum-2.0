@@ -1,14 +1,18 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import classes from './progressMeter.module.css';
 import classnames from 'classnames';
 
 const ProgressMeter = props => {
-    console.log(props.tot, "props tot")
-    const anim = {width: `${props.tot}`, transition: "width 5s"}
-
+    const [anim, setAnim] = useState({width: "0", transition: "width 3s"})
+    useEffect(() => {
+        setAnim({ width: `${props.tot}%`, transition: "width 3s" });
+        console.log("set show anim")
+        
+    }, [])
+    console.log("render progressmeter");
     return (
         <div className={classes.meter}>
-            <span className={classnames(classes.span)} style={anim}></span>
+            <span className={classnames(classes.span)} style={props.in? anim : null}></span>
         </div>
     )
 }
