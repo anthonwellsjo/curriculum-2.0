@@ -4,11 +4,9 @@ import classnames from 'classnames';
 import Centralizer from '../centralizer/centralizer';
 
 const DropDownMenu = props => {
-    console.log("show", props.show);
 
     let classNames = props.show ? classnames(classes.container, classes.show) : classnames(classes.container, classes.hide);
 
-    console.log("classnames", classNames);
 
     return (
         <>

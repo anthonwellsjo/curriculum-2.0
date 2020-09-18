@@ -5,18 +5,15 @@ import Centralizer from '../centralizer/centralizer';
 
 const SideMenu = props => {
 
-    const [showMenu, setShowMenu] = useState(true);
+    const [showMenu, setShowMenu] = useState(false);
 
     const onScrollEventListener = () => {
-        console.log("scroll event");
         if (window.pageYOffset < 7) {
             if (showMenu) {
-                console.log("set true")
-                setShowMenu(false)
+                setShowMenu(false);
             }
         } else {
             if (!showMenu) {
-                console.log("set false")
                 setShowMenu(true);
             }
         }

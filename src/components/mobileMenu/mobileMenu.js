@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import classes from './mobileMenu.module.css';
-import classnames from 'classnames';
 import DropDownMenu from '../dropDownMenu/dropDownMenu';
 
 const MobileMenu = props => {
     const [menuToggled, setMenuToggled] = useState(false);
-
-    console.log(menuToggled);
     return (
         <>
             <div className={classes.container}>

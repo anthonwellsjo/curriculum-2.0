@@ -7,23 +7,27 @@ const Menu = props => {
     const [showMenu, setShowMenu] = useState(true);
 
     const onScrollEventListener = () => {
-        console.log("scroll event");
         if (window.pageYOffset < 7) {
             if (!showMenu) {
-                console.log("set true")
                 setShowMenu(true)
             }
         } else {
             if (showMenu) {
-                console.log("set false")
                 setShowMenu(false);
             }
         }
     }
 
+    const onMouseMoveEventListener = (e) => {
+        if(e.clientY < 200){
+            setShowMenu(true);
+        } 
+    }
+
 
     useEffect(() => {
         window.addEventListener("scroll", onScrollEventListener);
+        window.addEventListener("mousemove",  e => onMouseMoveEventListener(e))
     })
 
     return (
