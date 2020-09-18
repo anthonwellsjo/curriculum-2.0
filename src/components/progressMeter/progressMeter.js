@@ -3,9 +3,9 @@ import classes from './progressMeter.module.css';
 import classnames from 'classnames';
 
 const ProgressMeter = props => {
-    const [anim, setAnim] = useState({width: "0", transition: "width 3s"})
+    const [anim, setAnim] = useState({width: "0", transition: "width 5s"})
     useEffect(() => {
-        setAnim({ width: `${props.tot}%`, transition: "width 3s" });
+        setAnim({ width: `${props.tot}%`, transition: "width 5s" });
         console.log("set show anim")
         
     }, [])

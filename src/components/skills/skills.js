@@ -13,7 +13,7 @@ const Skills = props => {
             <h2>Skills</h2>
             <Row>
                 <Col>
-                    <h4>JavaScript</h4>
+                    <h3>JavaScript</h3>
                 </Col>
                 <Col>
                     <div className={classes.progress}>
@@ -23,7 +23,7 @@ const Skills = props => {
             </Row>
             <Row>
                 <Col>
-                    <h4>TypeScript</h4>
+                    <h3>TypeScript</h3>
                 </Col>
                 <Col>
                     <div className={classes.progress}>
@@ -33,7 +33,7 @@ const Skills = props => {
             </Row>
             <Row>
                 <Col>
-                    <h4>C#</h4>
+                    <h3>C#</h3>
                 </Col>
                 <Col>
                     <div className={classes.progress}>
@@ -43,7 +43,7 @@ const Skills = props => {
             </Row>
             <Row>
                 <Col>
-                    <h4>SQL</h4>
+                    <h3>SQL</h3>
                 </Col>
                 <Col>
                     <div className={classes.progress}>
@@ -53,7 +53,7 @@ const Skills = props => {
             </Row>
             <Row>
                 <Col>
-                    <h4>React.js</h4>
+                    <h3>React.js</h3>
                 </Col>
                 <Col>
                     <div className={classes.progress}>
@@ -63,7 +63,7 @@ const Skills = props => {
             </Row>
             <Row>
                 <Col>
-                    <h4>Gatsby.js</h4>
+                    <h3>Gatsby.js</h3>
                 </Col>
                 <Col>
                     <div className={classes.progress}>
@@ -73,17 +73,7 @@ const Skills = props => {
             </Row>
             <Row>
                 <Col>
-                    <h4>Xamarin</h4>
-                </Col>
-                <Col>
-                    <div className={classes.progress}>
-                        <ProgressMeter in={props.showAnim} tot={55}/>
-                    </div>
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    <h4>Xamarin</h4>
+                    <h3>Xamarin</h3>
                 </Col>
                 <Col>
                     <div className={classes.progress}>

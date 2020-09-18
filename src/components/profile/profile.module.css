@@ -1,7 +1,6 @@
 .img {
   border-radius: 5px;
-  border: solid black 2px;
-  margin-bottom: 50px;
+  border: solid black 10px;
 }
 
 @media (min-width: 700px) {

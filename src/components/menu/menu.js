@@ -19,23 +19,40 @@ const Menu = props => {
     }
 
     const onMouseMoveEventListener = (e) => {
-        if(e.clientY < 200){
+        if (e.clientY < 200) {
             setShowMenu(true);
-        } 
+        }
+    }
+
+    const onLinkClickedEventHandler = type => {
+        switch(type){
+            case "skills":{
+                window.scrollTo(0, props.skills.current.offsetTop)  
+                break;
+            }
+            case "work":{
+                window.scrollTo(0, props.work.current.offsetTop)  
+                break;
+            }
+            case "contact":{
+                window.scrollTo(0, props.contact.current.offsetTop)  
+                break;
+            }
+        }
     }
 
 
     useEffect(() => {
         window.addEventListener("scroll", onScrollEventListener);
-        window.addEventListener("mousemove",  e => onMouseMoveEventListener(e))
+        window.addEventListener("mousemove", e => onMouseMoveEventListener(e))
     })
 
     return (
         <div className={showMenu ? styles.menu : classnames(styles.menu, styles.hide)}>
             <div className={styles.div}>
-                <a href={"/"} className={styles.link1} to="/contact">Contact</a>
-                <a href={"/"} className={styles.link2} to="/contact">Bio</a>
-                <a href={"/"} className={styles.link3} to="/contact">Work</a>
+                <a onClick={()=>onLinkClickedEventHandler("skills")} className={styles.link3}>Skills</a>
+                <a onClick={()=>onLinkClickedEventHandler("work")} className={styles.link3}>Work</a>
+                <a onClick={()=>onLinkClickedEventHandler("contact")} className={styles.link1}>Contact</a>
             </div>
         </div>
     )

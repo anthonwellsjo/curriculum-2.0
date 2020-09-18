@@ -5,18 +5,18 @@
 }
 
 .menu {
-    background-color: #1ecfd6;
+  background-color: #1ecfd6;
   position: fixed;
   top: 15px;
-  border-radius: 3px;
   backdrop-filter: blur(3px);
   transform: translateY(0);
-  transition: opacity 0.6s, transform .6s;
+  transition: opacity 0.6s, transform 0.6s;
+  border: solid black 5px;
 }
 .hide {
   opacity: 0;
   transform: translateY(-50px);
-  transition: opacity 0.6s, transform .6s;
+  transition: opacity 0.6s, transform 0.6s;
 }
 
 .div {
@@ -29,11 +29,8 @@
 .link1,
 .link2,
 .link3 {
-    opacity: 1;
-  color: black;
   padding: 3px 15px 3px 15px;
 }
-
 
 @media (max-width: 700px) {
   .div {
