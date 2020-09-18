@@ -108,7 +108,7 @@ export default function Home() {
           <br></br>
           <br></br>
           <ComponentAnimation in={showProfile}>
-            <div ref={profile} style={{ border: "solid black 15px", textAlign: "center", maxWidth: "100%", backgroundColor: "#c15640", padding: "20px 50px 50px 50px" }}>
+            <div ref={profile} style={{ border: "solid black 15px", textAlign: "center", maxWidth: "100%", backgroundColor: "#c15640", padding: "50px 50px 50px 50px" }}>
               <Profile />
             </div>
           </ComponentAnimation>
