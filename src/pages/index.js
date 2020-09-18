@@ -19,21 +19,17 @@ export default function Home() {
 
     switch (type) {
       case "skills": {
-        if (position.top < (window.innerHeight ) && position.bottom >= +100) {
-          console.log("showskills true")
+        if (position.top < (window.innerHeight ) && position.bottom >= 200) {
           setShowSkills(true);
-        } else {
-          console.log("showskills false")
+        } else if(showSkills == true) {
           setShowSkills(false);
         }
         break;
       }
       case "profile": {
-        if (position.top < (window.innerHeight ) && position.bottom >= +100) {
-          console.log("showprofile true")
+        if (position.top < (window.innerHeight ) && position.bottom >= 200) {
           setShowProfile(true);
-        } else {
-          console.log("showprofile false")
+        } else if(showProfile == true) {
           setShowProfile(false);
         }
         break;
@@ -50,7 +46,6 @@ export default function Home() {
     window.addEventListener("scroll", () => {
       const skillsPosition = skills.current.getBoundingClientRect();
       const profilePosition = profile.current.getBoundingClientRect();
-      console.log("skillsposition", skillsPosition.top, skillsPosition.bottom)
       hideOrShowElement(skillsPosition, "skills");
       hideOrShowElement(profilePosition, "profile");
 
@@ -78,9 +73,7 @@ export default function Home() {
                   </Container>
                 </Paper>
               </ComponentAnimation>
-
               <br></br>
-
               <br></br>
               <br></br>
               <br></br>

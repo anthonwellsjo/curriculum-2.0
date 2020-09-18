@@ -1,45 +1,67 @@
 import React from 'react';
-import LinearProgress from '@material-ui/core/LinearProgress';
-import Centralizer from '../centralizer/centralizer';
 import classes from './skills.module.css';
+import Row from '../layout/row/row';
+import Col from '../layout/col/col';
+import ProgressMeter from '../progressMeter/progressMeter';
 
 const Skills = props => {
 
+
+
+
     return (
         <div className={classes.div}>
-            <Centralizer column>
-                <h2>Skills</h2>
-                <Centralizer>
+            <h2>Skills</h2>
+            <Row>
+                <Col>
                     <h4>JavaScript</h4>
+                </Col>
+                <Col>
                     <div className={classes.progress}>
-                        <LinearProgress variant="determinate" value={45} />
+                        <ProgressMeter tot="45"/>
                     </div>
-                </Centralizer>
-                <Centralizer >
+                </Col>
+            </Row>
+            <Row>
+                <Col>
                     <h4>TypeScript</h4>
+                </Col>
+                <Col>
                     <div className={classes.progress}>
-                        <LinearProgress variant="determinate" value={45} />
+                        <ProgressMeter tot={45} />
                     </div>
-                </Centralizer>
-                <Centralizer >
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <h4>C#</h4>
+                </Col>
+                <Col>
+                    <div className={classes.progress}>
+                        <ProgressMeter />
+                    </div>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
                     <h4>SQL</h4>
+                </Col>
+                <Col>
                     <div className={classes.progress}>
-                        <LinearProgress variant="determinate" value={45} />
+                        <ProgressMeter />
                     </div>
-                </Centralizer>
-                <Centralizer >
-                    <h4>HTML5 & CSS</h4>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <h4>React.js</h4>
+                </Col>
+                <Col>
                     <div className={classes.progress}>
-                        <LinearProgress variant="determinate" value={45} />
+                        <ProgressMeter />
                     </div>
-                </Centralizer>
-                <Centralizer >
-                    <h4>React.Js</h4>
-                    <div className={classes.progress}>
-                        <LinearProgress variant="determinate" value={45} />
-                    </div>
-                </Centralizer>
-            </Centralizer>
+                </Col>
+            </Row>
         </div>
     )
 }
