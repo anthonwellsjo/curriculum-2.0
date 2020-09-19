@@ -1,0 +1,49 @@
+.container {
+  margin: auto;
+  height: 40px;
+  width: 100%;
+  animation: fall 20s infinite;
+}
+
+.stick1 {
+  height: 1px;
+  width: 5px;
+  border-radius: 5px;
+  border-radius: 5px;
+  background-color: black;
+  animation: spin 5s infinite linear;
+}
+.stick2 {
+  height: 10px;
+  width: 3px;
+  border-radius: 5px;
+  border-radius: 5px;
+  background-color: black;
+}
+
+.stick2 {
+  height: 2px;
+  width: 50px;
+  background-color: white;
+  margin-bottom: -15px;
+  animation: sweep 20s infinite linear;
+}
+
+.stick1:hover {
+  background-color: red;
+}
+
+@keyframes spin {
+  0%{
+    transform: rotate(0);
+    width: 15px;
+  }
+  50%{
+    transform: rotate(180deg);
+    width: 35px;
+  }
+  100%{
+    transform: rotate(360deg);
+    width: 15px;
+  }
+}

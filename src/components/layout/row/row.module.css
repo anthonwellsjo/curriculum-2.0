@@ -1,4 +1,27 @@
 .row {
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* desktop */
+
+@media (min-width: 525px) {
+  .row {
     flex-direction: row;
+  }
+}
+
+/* phone */
+
+@media (max-width: 526px) {
+  .reverse {
+    flex-direction: column-reverse;
+  }
+}
+@media (max-width: 526px) {
+  .normal {
+    flex-direction: column;
+    margin-top: 10px;
+  }
 }

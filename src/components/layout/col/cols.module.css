@@ -1,8 +1,15 @@
+@media (min-width: 525px){
 .column {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    vertical-align: auto;
-    justify-content: center;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  vertical-align: auto;
+  justify-content: center;
+}}
+
+@media (max-width: 526px) {
+  .column {
+      height: 50%;
+  }
 }

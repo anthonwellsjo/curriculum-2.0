@@ -7,6 +7,12 @@ const Centralizer = props => {
     if (props.column) {
         classSpec = classnames(classes.centralizer, classes.column)
     }
+    if(props.column && props.space){
+        classSpec = classnames(classes.centralizer, classes.column, classes.space)
+    }
+    if(props.space){
+        classSpec = classnames(classes.centralizer, classes.space)
+    }
     return (
         <div className={classSpec}>
             {props.children}

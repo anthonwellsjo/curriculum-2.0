@@ -1,0 +1,48 @@
+@media (max-width: 525px) {
+  .container {
+    transform: translateY(-50px);
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+  }
+}
+
+@media (min-width: 526px) {
+  .container {
+    opacity: 0.4;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateY(0);
+  }
+  .hide {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+}
+
+.line {
+  width: 50px;
+  height: 2px;
+  border-radius: 3px;
+  background-color: black;
+  margin-top: 3px;
+  z-index: 150;
+}
+
+.container {
+  animation: anim 1s infinite;
+  position: fixed;
+  top: 6px;
+  left: 0;
+  right: 0;
+}
+
+@keyframes anim {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

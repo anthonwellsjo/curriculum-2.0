@@ -1,0 +1,81 @@
+.container {
+  margin: auto;
+  height: 40px;
+  width: 100%;
+  animation: fall 20s infinite;
+}
+
+.stick1 {
+  height: 3px;
+  width: 3px;
+  border-radius: 5px;
+  border-radius: 5px;
+  background-color: black;
+}
+.stick12 {
+  height: 10px;
+  width: 3px;
+  border-radius: 5px;
+  border-radius: 5px;
+  background-color: black;
+}
+
+.stick2 {
+  height: 2px;
+  width: 50px;
+  background-color: white;
+  margin-bottom: -15px;
+  animation: sweep 20s infinite linear;
+}
+
+.stick1:hover {
+  background-color: red;
+}
+
+@keyframes fall {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  47% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+  97% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes sweep {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: translateX(200px);
+  }
+  49% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  75% {
+    transform: translateX(20px);
+  }
+  99% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

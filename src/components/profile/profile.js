@@ -5,17 +5,23 @@ import classes from './profile.module.css';
 import Centralizer from '../centralizer/centralizer';
 import Row from '../layout/row/row';
 import Col from '../layout/col/col';
-import { TextareaAutosize } from '@material-ui/core';
+import InnerTextHolder from '../innerTextHolder/innerTextHolder';
 
 
 const Profile = props => {
     return (
-        <Row>
+        <Row reverse>
             <Col>
-                <div style={{display: "block", textAlign: "left", margin: "auto"}}>
-                    <h1>Anthon Wellsjö</h1>
-                    <h3>Swedish Web Developer based in Rome</h3>
-                </div>
+                <Centralizer column>
+
+                    <header>
+                        <h1>Anthon Wellsjö</h1>
+                    </header>
+                    <InnerTextHolder>
+                        <p>Swedish Web Developer based in Rome</p>
+                    </InnerTextHolder>
+
+                </Centralizer>
             </Col>
             <Col>
                 <Centralizer column>

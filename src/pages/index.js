@@ -3,11 +3,15 @@ import Menu from "../components/menu/menu"
 import Profile from '../components/profile/profile'
 import Centralizer from '../components/centralizer/centralizer';
 import Skills from "../components/skills/skills";
-import MobileMenu from "../components/mobileMenu/mobileMenu";
 import ComponentAnimation from '../components/componentAnimation/componentAnimation';
 import Presentation from '../components/presentation/presentation';
 import Work from "../components/work/work";
 import Contact from "../components/contact/contact";
+import classes from "./index.module.css";
+import DecoAnim from "../decoAnim/decoAnim";
+import DecoAnimTwo from "../components/animations/decoAnimTwo/decoAnimTwo";
+import DecoAnimThree from "../components/animations/decoAnimThree/decoAnimThree";
+import DecoAnimFour from "../components/animations/decoAnimFour/decoAnimFour";
 
 
 
@@ -20,7 +24,7 @@ export default function Home() {
   const [showProfile, setShowProfile] = useState(true)
   const [showContact, setShowContact] = useState(false)
   const [showWork, setShowWork] = useState(false)
-  const [showPresentation, setShowPresentation] = useState(false)
+  const [showPresentation, setShowPresentation] = useState(true)
   const [showSkills, setShowSkills] = useState(false);
   const [showSkillsAnim, setShowSkillsAnim] = useState(false);
 
@@ -95,78 +99,77 @@ export default function Home() {
   return (
     <React.Fragment>
       <Centralizer column>
-        <div style={{ width: "95%", maxWidth: "850px" }}>
+        <div className={classes.frame} style={{  }}>
           <Centralizer column>
             <Menu work={work} contact={contact} skills={skills}/>
           </Centralizer>
-          {/* <SideMenu /> */}
-          <MobileMenu />
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
           <ComponentAnimation in={showProfile}>
-            <div ref={profile} style={{ border: "solid black 15px", textAlign: "center", maxWidth: "100%", backgroundColor: "#c15640", padding: "50px 50px 50px 50px" }}>
+            <section ref={profile} style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#d0e3cc", padding: "50px 50px 50px 50px" }}>
               <Profile />
-            </div>
+            </section>
           </ComponentAnimation>
           <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <DecoAnimTwo/>
           <br></br>
           <br></br>
           <br></br>
           <br></br>
           <ComponentAnimation in={showPresentation}>
-            <div ref={presentation} style={{ border: "solid black 15px", textAlign: "center", maxWidth: "100%", backgroundColor: "#003D73", padding: "20px 50px 50px 50px" }}>
+            <section ref={presentation} style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#f7ffdd", padding: "20px 50px 50px 50px" }}>
               <Centralizer column>
                 <Presentation />
               </Centralizer>
-            </div>
+            </section>
           </ComponentAnimation>
           <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <DecoAnimThree/>
           <br></br>
           <br></br>
           <br></br>
           <br></br>
           <ComponentAnimation in={showSkills}>
-            <div ref={skills} style={{ border: "solid black 15px", textAlign: "center", maxWidth: "100%", backgroundColor: "#0878a4", padding: "20px 50px 50px 50px" }}>
+            <section ref={skills} style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#fc9f5b", padding: "20px 50px 50px 50px" }}>
               <Centralizer column>
                 <Skills showAnim={showSkillsAnim} />
               </Centralizer>
-            </div>
+            </section>
           </ComponentAnimation>
           <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <DecoAnimFour/>
           <br></br>
           <br></br>
           <br></br>
           <br></br>
           <ComponentAnimation in={showWork}>
-            <div ref={work} style={{ border: "solid black 15px", textAlign: "center", maxWidth: "100%", backgroundColor: "#f092a5", padding: "20px 50px 50px 50px" }}>
+            <section ref={work} style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#FBD1A2", padding: "20px 50px 50px 50px" }}>
               <Centralizer column>
                 <Work />
               </Centralizer>
-            </div>
+            </section>
           </ComponentAnimation>
           <br></br>
           <br></br>
           <br></br>
           <br></br>
           <br></br>
+          <DecoAnim/>
+          <br></br>
           <ComponentAnimation in={showContact}>
-            <div ref={contact} style={{ border: "solid black 15px", textAlign: "center", maxWidth: "100%", backgroundColor: "#f092a5", padding: "20px 50px 50px 50px" }}>
+            <div ref={contact} style={{ textAlign: "center", maxWidth: "100%", padding: "20px 50px 50px 50px" }}>
               <Centralizer column>
                 <Contact />
               </Centralizer>
             </div>
           </ComponentAnimation>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
           <br></br>
           <br></br>
         </div>

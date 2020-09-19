@@ -1,0 +1,28 @@
+@media(min-width: 526px) {
+    .container {
+        display: none;
+    }
+}
+
+.container {
+  position: fixed;
+  left: 0;
+  bottom: 5px;
+  right: 0;
+  z-index: 100;
+}
+.bar1,
+.bar2,
+.bar3{
+  transform: rotate(0deg);
+  width: 30px;
+  height: 5px;
+  background-color: black;
+  margin: 3px 0;
+  box-shadow: 1px 1px white ;
+  border-radius: 5px;
+}
+
+.hide {
+    opacity: 0;
+}

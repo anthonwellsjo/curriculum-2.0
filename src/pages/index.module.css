@@ -1,0 +1,15 @@
+.frame {
+  width: 95%;
+  max-width: 850px;
+}
+
+@media (min-width: 526px) {
+  .frame {
+    margin-top: 100px;
+  }
+}
+@media (max-width: 525px) {
+  .frame {
+    margin-top: 10px;
+  }
+}

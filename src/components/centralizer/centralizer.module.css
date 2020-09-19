@@ -9,3 +9,7 @@
 .column {
   flex-direction: column;
 }
+
+.space {
+  justify-content: space-evenly;
+}

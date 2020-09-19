@@ -1,42 +1,108 @@
-h1, h2, h3, h4, p {
-    font-family: Cabin;
-    font-weight: 600;
-}
-h1 {
-    font-size: 50px;
-}
-h2 {
-    font-size: 40px;
-}
-h3 {
-    font-size: 30px;
-}
+h1,
+h2,
+h3,
 h4 {
-    font-size: 20px;
+  font-family: Maven Pro;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  font-family: Maven Pro;
+  text-transform: lowercase;
 }
 
-p{
-    font-size: 30px;
+/* desktop */
+
+@media (min-width: 525px) {
+  h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 35px;
+  }
+  h3 {
+    font-size: 25px;
+  }
+  h4 {
+    font-size: 15px;
+  }
+  p {
+    font-size: 17px;
+  }
 }
- 
+
+/* phone */
+
+@media (max-width: 526) {
+  h1 {
+    font-size: 45px;
+  }
+  h2 {
+    font-size: 35px;
+  }
+  h3 {
+    font-size: 25px;
+  }
+  h4 {
+    font-size: 15px;
+  }
+  p {
+    font-size: 25px;
+  }
+}
+
 a {
-    font-family: Cabin;
-    font-weight: bold;
-    font-size: 30px;
-    color: black;
+  font-size: 30px;
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 a:hover {
-    color: white;
+  color: grey;
+  transition: color 0.3s;
+}
+section,
+img {
+  box-shadow: 3px 5px 5px #646e68;
+  transition: box-shadow 0.3s;
+}
+section:hover,
+img:hover,
+header:hover {
+  box-shadow: 0px 0px 0px #646e68;
+  transition: box-shadow 0.3s;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
-a {
-    text-decoration: none;
+header {
+  box-shadow: 2px 2px 5px #646e68;
+  transition: box-shadow 0.3s;
+  background-color: #cde7b0;
+  padding-left: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+figure:hover {
+  box-shadow: 1px 1px 3px #646e68;
+  transition: box-shadow 0.3s;
+}
+figure {
+  box-shadow: 0px 0px 0px #646e68;
+  transition: box-shadow 0.3s;
+}
+
+body,
+html {
+  overflow-x: hidden;
 }
 
 body {
-    background-color: #edd170;
+  background-color: #dba159;
 }

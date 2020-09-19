@@ -1,19 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './progressMeter.module.css';
 import classnames from 'classnames';
+import Centralizer from '../centralizer/centralizer';
 
 const ProgressMeter = props => {
-    const [anim, setAnim] = useState({width: "0", transition: "width 5s"})
+    const [anim, setAnim] = useState({ width: "0", transition: "width 5s" })
     useEffect(() => {
         setAnim({ width: `${props.tot}%`, transition: "width 5s" });
         console.log("set show anim")
-        
+
     }, [])
     console.log("render progressmeter");
     return (
-        <div className={classes.meter}>
-            <span className={classnames(classes.span)} style={props.in? anim : null}></span>
-        </div>
+        <Centralizer>
+            <div className={classes.meter}>
+                <span className={classnames(classes.span)} style={props.in ? anim : null}></span>
+            </div>
+        </Centralizer>
     )
 }
 
