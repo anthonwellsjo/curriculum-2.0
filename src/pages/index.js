@@ -12,6 +12,7 @@ import DecoAnim from "../decoAnim/decoAnim";
 import DecoAnimTwo from "../components/animations/decoAnimTwo/decoAnimTwo";
 import DecoAnimThree from "../components/animations/decoAnimThree/decoAnimThree";
 import DecoAnimFour from "../components/animations/decoAnimFour/decoAnimFour";
+import IndexElementMargin from "../components/layout/indexElementMargin/indexElementMargin";
 
 
 
@@ -26,15 +27,13 @@ export default function Home() {
   const [showWork, setShowWork] = useState(false)
   const [showPresentation, setShowPresentation] = useState(true)
   const [showSkills, setShowSkills] = useState(false);
-  const [showSkillsAnim, setShowSkillsAnim] = useState(false);
 
   const hideOrShowElement = (position, type) => {
 
     switch (type) {
       case "skills": {
-        if (position.top < (window.innerHeight) && position.bottom >= 0) {
+        if (position.top < (window.innerHeight)) {    /*bug when unmounted when scrooled by*/
           setShowSkills(true);
-          setShowSkillsAnim(true);
         } else {
           setShowSkills(false);
         }
@@ -99,79 +98,71 @@ export default function Home() {
   return (
     <React.Fragment>
       <Centralizer column>
-        <div className={classes.frame} style={{  }}>
+        <div className={classes.frame} style={{}}>
           <Centralizer column>
-            <Menu work={work} contact={contact} skills={skills}/>
+            <Menu work={work} contact={contact} skills={skills} />
           </Centralizer>
-          <ComponentAnimation in={showProfile}>
-            <section ref={profile} style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#d0e3cc", padding: "50px 50px 50px 50px" }}>
-              <Profile />
-            </section>
-          </ComponentAnimation>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <DecoAnimTwo/>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <ComponentAnimation in={showPresentation}>
-            <section ref={presentation} style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#f7ffdd", padding: "20px 50px 50px 50px" }}>
-              <Centralizer column>
-                <Presentation />
-              </Centralizer>
-            </section>
-          </ComponentAnimation>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <DecoAnimThree/>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <ComponentAnimation in={showSkills}>
-            <section ref={skills} style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#fc9f5b", padding: "20px 50px 50px 50px" }}>
-              <Centralizer column>
-                <Skills showAnim={showSkillsAnim} />
-              </Centralizer>
-            </section>
-          </ComponentAnimation>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <DecoAnimFour/>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <ComponentAnimation in={showWork}>
-            <section ref={work} style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#FBD1A2", padding: "20px 50px 50px 50px" }}>
-              <Centralizer column>
-                <Work />
-              </Centralizer>
-            </section>
-          </ComponentAnimation>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <DecoAnim/>
-          <br></br>
-          <ComponentAnimation in={showContact}>
-            <div ref={contact} style={{ textAlign: "center", maxWidth: "100%", padding: "20px 50px 50px 50px" }}>
-              <Centralizer column>
-                <Contact />
-              </Centralizer>
-            </div>
-          </ComponentAnimation>
-          <br></br>
-          <br></br>
+          <div ref={profile}>
+            <ComponentAnimation in={showProfile}>
+              <section style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#d0e3cc", padding: "50px 50px 50px 50px" }}>
+                <Profile />
+              </section>
+            </ComponentAnimation>
+          </div>
+          <IndexElementMargin />
+          <Centralizer>
+            <DecoAnimThree />
+          </Centralizer>
+          <IndexElementMargin />
+          <div ref={presentation}>
+            <ComponentAnimation in={showPresentation}>
+              <section style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#f7ffdd", padding: "20px 50px 50px 50px" }}>
+                <Centralizer column>
+                  <Presentation />
+                </Centralizer>
+              </section>
+            </ComponentAnimation>
+          </div>
+          <IndexElementMargin />
+          <Centralizer>
+            <DecoAnimThree />
+          </Centralizer>
+          <IndexElementMargin />
+          <div ref={skills}>
+            <ComponentAnimation unmountOnExit in={showSkills}>
+              <section style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#dcbf85", padding: "20px 50px 50px 50px" }}>
+                <Centralizer column>
+                  <Skills />
+                </Centralizer>
+              </section>
+            </ComponentAnimation>
+          </div>
+          <IndexElementMargin />
+          <Centralizer>
+            <DecoAnimThree />
+          </Centralizer>
+          <IndexElementMargin />
+          <div ref={work}>
+            <ComponentAnimation in={showWork}>
+              <section style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#FBD1A2", padding: "20px 50px 50px 50px" }}>
+                <Centralizer column>
+                  <Work />
+                </Centralizer>
+              </section>
+            </ComponentAnimation>
+          </div>
+          <IndexElementMargin />
+          <div ref={contact}>
+            <ComponentAnimation in={showContact}>
+              <div style={{ textAlign: "center", maxWidth: "100%", padding: "20px 50px 50px 50px" }}>
+                <Centralizer column>
+                  <Contact />
+                </Centralizer>
+              </div>
+            </ComponentAnimation>
+          </div>
+          <DecoAnim />
+          <IndexElementMargin />
         </div>
       </Centralizer>
     </React.Fragment >

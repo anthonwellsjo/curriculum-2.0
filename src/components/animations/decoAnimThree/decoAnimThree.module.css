@@ -1,22 +1,57 @@
+.img{
+  box-shadow: none;
+  height:30px;
+  width:30px;
+}
+.img2{
+  box-shadow: none;
+  height:400px;
+  width:400px;
+}
+
 .container {
   margin: auto;
   height: 40px;
   width: 100%;
+  transition: transform 5s;
 }
 
 .stick1 {
-  height: 40px;
-  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
   border-radius: 10px;
-  border: dotted black 2px;
+  border: dashed #585b56 2px;
   animation: roll 5s infinite;
-  transition: background-color .5s;
+  transition: height 0.5s, width 0.5s, background-color 5s, border 0.5s;
+}
+.stick1:hover{
+  background-color: white;
+  transition: background-color 5s;
 }
 
-.stick1:hover {
-  background-color: aquamarine;
-  transition: background-color .5s;
+.text {
+  font-size: 5px;
+  opacity: 0;
+  transition: opacity 5s;
 }
+.text:hover {
+  opacity: 1;
+  transition: opacity 5s;
+}
+
+@media (max-width: 525px) {
+  .stick1 {
+    height: 20px;
+    width: 20px;
+    transition: height 0.5s, width 0.5s, border 0.5s;
+    border: dashed #585b56 1px;
+  }
+}
+
+
 
 @keyframes roll {
   0% {
@@ -25,12 +60,10 @@
   }
   25% {
     transform: rotate(180deg);
-    transform: translateX(5px);
     border-radius: 40px;
   }
   50% {
     transform: rotate(360deg);
-    
   }
   75% {
     transform: rotate(-180deg);
@@ -38,7 +71,6 @@
   }
   100% {
     transform: rotate(0);
-    transform: translateX(0);
     border-radius: 10px;
   }
 }

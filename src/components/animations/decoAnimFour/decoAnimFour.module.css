@@ -8,7 +8,7 @@
   height: 3px;
   width: 80%;
   animation: roll 5s infinite;
-  background-color: black;
+  background-color: #fc7753;
 }
 
 .stick1:hover {

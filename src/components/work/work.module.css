@@ -1,4 +1,36 @@
-.div {
-    width: 90%;
-    text-align: left;
+/* @media(max-width: 525px){
+    .figure{
+        border: 1px dotted rgba(63;
+         63;
+         63;
+        0.267);
+        padding-bottom: 5px;
+    }
+} */
+
+@media (max-width: 525px) {
+  .borderBtwTop {
+    width: 100%;
+    border-top: 2px dotted black;
+    margin-top: 10px;
+  }
+  .borderBottomLarge {
+    width: 100%;
+    border-top: 2px dotted black;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 526px) {
+  .borderBtwBottom {
+    width: 100%;
+    border-top: 2px dotted black;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 650px) and (min-width: 525px) {
+  .p {
+    font-size: 15px;
+  }
 }

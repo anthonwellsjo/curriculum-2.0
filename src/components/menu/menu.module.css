@@ -3,7 +3,7 @@
     display: none;
   }
 }
-@media (min-width: 524px) {
+@media (min-width: 526px) {
   .mobileMenu {
     display: none;
   }

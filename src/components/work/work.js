@@ -1,5 +1,6 @@
 import React from 'react';
 import InnerTextHolder from '../innerTextHolder/innerTextHolder';
+import classes from './work.module.css';
 import Col from '../layout/col/col';
 import Row from '../layout/row/row';
 
@@ -18,27 +19,30 @@ const Work = props => {
             <InnerTextHolder>
                 {work.map(work => {
                     return (
-                        <figure key={work.title}>
+                        <figure className={classes.figure} key={work.title}>
+                            <div className={classes.borderBtwTop}></div>
                             <Row>
                                 <Col>
-                                    <InnerTextHolder>
-                                        <p>{work.title}</p>
-                                    </InnerTextHolder>
+                                    <div style={{ minMargin: "5px"}}>
+                                            <p className={classes.p}>{work.title}</p>
+                                    </div>
                                 </Col>
                                 <Col>
-                                    <InnerTextHolder>
-                                        <p>{work.city}</p>
-                                    </InnerTextHolder>
+                                    <div style={{ minMargin: "5px"}}>
+                                            <p className={classes.p}>{work.city}</p>
+                                    </div>
                                 </Col>
                                 <Col>
-                                    <InnerTextHolder>
-                                        <p>{work.duration}</p>
-                                    </InnerTextHolder>
+                                    <div style={{ minMargin: "5px"}}>
+                                            <p className={classes.p}>{work.duration}</p>
+                                    </div>
                                 </Col>
                             </Row>
+                            <div className={classes.borderBtwBottom} style={{}}></div>
                         </figure>
                     )
                 })}
+                <div className={classes.borderBottomLarge}></div>
             </InnerTextHolder>
         </>
     )

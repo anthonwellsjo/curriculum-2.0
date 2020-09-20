@@ -24,3 +24,10 @@
     vertical-align: auto;
     justify-content: center;
 }
+
+@media(max-width: 525px){
+    .figure{
+        border: 1px dotted rgba(63, 63, 63, 0.267);
+        padding-bottom: 5px;
+    }
+}

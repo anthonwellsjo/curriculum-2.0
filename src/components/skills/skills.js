@@ -1,32 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './skills.module.css';
 import Row from '../layout/row/row';
 import Col from '../layout/col/col';
 import ProgressMeter from '../progressMeter/progressMeter';
 import InnerTextHolder from '../innerTextHolder/innerTextHolder';
+import ThumbsUp from '../animations/thumbsUp/thumbsUp';
 
 
 
 
 const Skills = props => {
+    const [anim, setAnim] = useState({ show: false, donkey: "white" });
 
     function timer(ms) {
         return new Promise(res => setTimeout(res, ms));
     }
 
     const skills = [
-        { skill: "JavaScript", tot: 75 },
+        { skill: "HTML5 & CSS 3", tot: 100 },
+        { skill: "JavaScript", tot: 90 },
         { skill: "TypeScript", tot: 55 },
         { skill: "C#", tot: 65 },
         { skill: "SQL", tot: 50 },
-        { skill: "React.Js", tot: 80 },
-        { skill: "Gatsby.Js", tot: 60 },
+        { skill: "React.Js", tot: 90 },
+        { skill: "Gatsby.Js", tot: 80 },
         { skill: "Xamarin", tot: 50 },
+        { skill: "Java", tot: 0 },
+        
     ]
 
     function timer(ms) {
         return new Promise(res => setTimeout(res, ms));
     }
+
+    useEffect(() => {
+        setTimeout(() => {
+            setAnim({ show: true })
+        })
+    }, 200);
 
     return (
         <>
@@ -36,15 +47,18 @@ const Skills = props => {
             <InnerTextHolder>
                 {skills.map((skill) => {
                     return (
-                        <figure key={skill.skill}>
+                        <figure className={classes.figure} key={skill.skill}>
                             <Row>
                                 <Col>
                                     <p>{skill.skill}</p>
                                 </Col>
                                 <Col>
                                     <div className={classes.progress}>
-                                        <ProgressMeter in={props.showAnim} tot={skill.tot} />
+                                        <ProgressMeter in={anim.show} duration={1000} tot={skill.tot} />
                                     </div>
+                                </Col>
+                                <Col>
+                                    <ThumbsUp in={anim.show} duration={1000} tot={skill.tot} />
                                 </Col>
                             </Row>
                         </figure>

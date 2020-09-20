@@ -24,10 +24,19 @@ const ComponentAnimation = (props) => {
         }
         setHasBeenSet(true);
     }
+
+    const renderingMethod = (function() {
+        if(props.unmountOnExit){
+            return (props.in && props.children)
+        }
+        else {
+            return props.children
+        }
+      }());
     
     return (
         <div className={props.in ? classnames(classes.in) : animation}>
-            {props.children}
+            {renderingMethod}
         </div>
     )
 }

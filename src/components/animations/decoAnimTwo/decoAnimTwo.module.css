@@ -6,11 +6,11 @@
 }
 
 .stick1 {
-  height: 1px;
+  height: 2px;
   width: 5px;
   border-radius: 5px;
   border-radius: 5px;
-  background-color: black;
+  background-color: #fc7753;
   animation: spin 5s infinite linear;
 }
 .stick2 {
@@ -18,7 +18,7 @@
   width: 3px;
   border-radius: 5px;
   border-radius: 5px;
-  background-color: black;
+  background-color: #fc7753;
 }
 
 .stick2 {
