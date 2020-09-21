@@ -1,0 +1,19 @@
+.img {
+  height: 50px;
+  width: 50px;
+  box-shadow: none;
+}
+
+.repoBox {
+  border: 1px solid black;
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 50px;
+  
+}

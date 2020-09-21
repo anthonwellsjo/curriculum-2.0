@@ -13,6 +13,7 @@ import DecoAnimTwo from "../components/animations/decoAnimTwo/decoAnimTwo";
 import DecoAnimThree from "../components/animations/decoAnimThree/decoAnimThree";
 import DecoAnimFour from "../components/animations/decoAnimFour/decoAnimFour";
 import IndexElementMargin from "../components/layout/indexElementMargin/indexElementMargin";
+import GitRepos from "../components/gitRepos/gitRepos";
 
 
 
@@ -147,6 +148,20 @@ export default function Home() {
               <section style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#FBD1A2", padding: "20px 50px 50px 50px" }}>
                 <Centralizer column>
                   <Work />
+                </Centralizer>
+              </section>
+            </ComponentAnimation>
+          </div>
+          <IndexElementMargin />
+          <Centralizer>
+            <DecoAnimThree />
+          </Centralizer>
+          <IndexElementMargin />
+          <div >
+            <ComponentAnimation in={true}>
+              <section style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#FBD1A2", padding: "20px 50px 50px 50px" }}>
+                <Centralizer column>
+                  <GitRepos/>
                 </Centralizer>
               </section>
             </ComponentAnimation>
