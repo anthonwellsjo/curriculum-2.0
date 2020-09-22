@@ -44,15 +44,18 @@ const GitRepos = props => {
             <div className={classes.container}>
                 {jsonFetched && DATA.map(repo => {
                     return (
-                        <div className={classes.repoBox} onClick={() => window.open(repo.html_url, "_blank")} >
-                <Centralizer column>
-                    <img className={classes.img} src={repoImg}></img>
-                    <p>{repo.name}</p>
-                </Centralizer>
+                        <div key={repo.name} className={classes.repoBox} onClick={() => window.open(repo.html_url, "_blank")} >
+                            <Centralizer column>
+                                <h4 className={classes.h4}>{repo.name}</h4>
+                                <img className={classes.img} src={repoImg}></img>
+                                {repo.description && <div className={classes.popUp}>
+                                    <p className={classes.p}>{repo.description}</p>
+                                </div>}
+                            </Centralizer>
                         </div>
                     )
                 })}
-        </div>
+            </div>
         </>
     )
 }

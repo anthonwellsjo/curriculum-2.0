@@ -10,6 +10,10 @@
     right: 100px;
 }
 
+.figure{
+    min-width: 105px;
+}
+
 .row {
     display: flex;
     flex-direction: row;

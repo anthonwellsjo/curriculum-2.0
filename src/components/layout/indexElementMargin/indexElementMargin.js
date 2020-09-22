@@ -4,7 +4,7 @@ import classes from './indexElementMargin.module.css';
 
 const IndexElementMargin = props => {
     return(
-        <div className={classes.distance}></div>
+        <div style={{height: props.distance}} className={classes.distance}></div>
     )
 }
 
