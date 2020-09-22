@@ -7,8 +7,7 @@ import classnames from 'classnames';
 
 const DecoAnimThree = () => {
     return (
-
-        <div className={classnames(classes.container, "hideOnHorizontal")}>
+        <div className={classnames(classes.container, "decoAnimThree")}>
             <Centralizer column space>
                 <div className={classes.stick1}>
                     <div className={classes.text}>
@@ -30,10 +29,8 @@ const DecoAnimThree = () => {
                         <img className={classes.img} src={react}></img>
                     </div>
                 </div>
-                
             </Centralizer>
         </div >
-
     )
 }
 
