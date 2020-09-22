@@ -23,8 +23,8 @@ export default function Home() {
 
   //////////////////////////////////////////////element distance
   const [distanceElements, setDistanceElements] = useState(70);
-  document.onmousemove = onMouseMoveEvenetHandler;
-  function onMouseMoveEvenetHandler(e) {
+  
+  function onMouseMoveEventHandler(e) {
     if (window.innerWidth >= 525) {
       if (e.clientY < 180) {
         setDistanceElements(100);
@@ -34,27 +34,27 @@ export default function Home() {
     }
   }
 
-  const setDistanceBtwElementsForDedicatedMedia = () => {
+  const setDistanceBtwElementsForDedicatedMedia = (innerWidth, innerHeight) => {
     //mobile
-    if (window.innerWidth <= 525) {
+    if (innerWidth <= 525) {
       setDistanceElements(10);
     }
-    if (window.innerWidth > 525) {
+    if (innerWidth > 525) {
       setDistanceElements(70);
     }
   }
 
-  const setRenderElementsForDedicatedMedia = () => {
+  const setRenderElementsForDedicatedMedia = (innerWidth, innerHeight) => {
     //mobile
-    if (window.innerWidth <= 525 && window.innerHeight > 525) {
+    if (innerWidth <= 525 && innerHeight > 525) {
       setRenderElement(prev => ({ ...prev, renderAnim: true }))
     }
     //desktop
-    if (window.innerWidth > 525 && window.innerWidth < window.innerHeight) {
+    if (innerWidth > 525 && innerWidth < innerHeight) {
       setRenderElement(prev => ({ ...prev, renderAnim: true }))
     }
     //desktop
-    if (window.innerWidth > 525 && window.innerHeight <= 525) {
+    if (innerWidth > 525 && innerHeight <= 525) {
       setRenderElement(prev => ({ ...prev, renderAnim: false }))
     }
   }
@@ -135,8 +135,10 @@ export default function Home() {
 
   }
   useEffect(() => {
-    setRenderElementsForDedicatedMedia();
-    setDistanceBtwElementsForDedicatedMedia();
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    setRenderElementsForDedicatedMedia(windowWidth, windowHeight);
+    setDistanceBtwElementsForDedicatedMedia(windowWidth, windowHeight);
     window.addEventListener("scroll", () => {
       const skillsPosition = skills.current.getBoundingClientRect();
       const contactPosition = contact.current.getBoundingClientRect();
@@ -150,12 +152,12 @@ export default function Home() {
       hideOrShowElement(workPosition, "work");
       hideOrShowElement(contactPosition, "contact");
       hideOrShowElement(gitPosition, "git");
-
     })
     window.addEventListener("resize", () => {
       setDistanceBtwElementsForDedicatedMedia();
       setRenderElementsForDedicatedMedia();
     })
+    document.addEventListener("mousemove", onMouseMoveEventHandler)
   }, [])
   /////////////////////////////////////////////////////////
 
