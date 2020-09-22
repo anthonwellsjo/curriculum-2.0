@@ -18,9 +18,29 @@ import GitRepos from "../components/gitRepos/gitRepos";
 
 
 export default function Home() {
+
+  //////////////////////////////////////////////element distance
+  const [distanceElements, setDistanceElements] = useState(70);
+  document.onmousemove = onMouseMoveEvenetHandler;
+  let clientPos;
+  function onMouseMoveEvenetHandler(e) {
+    console.log(e.clientY)
+    if (e.clientY < 180) {
+      setDistanceElements(100);
+    } else {
+      setDistanceElements(75);
+    }
+  }
+  
+
+
+
+
+  ///////////////////////////////////////////////element visibility
   let profile = useRef();
   let contact = useRef();
   let skills = useRef();
+  let git = useRef();
   let presentation = useRef();
   let work = useRef();
   const [showProfile, setShowProfile] = useState(true)
@@ -28,12 +48,12 @@ export default function Home() {
   const [showWork, setShowWork] = useState(false)
   const [showPresentation, setShowPresentation] = useState(true)
   const [showSkills, setShowSkills] = useState(false);
-
+  const [showGit, setShowGit] = useState(false);
   const hideOrShowElement = (position, type) => {
 
     switch (type) {
       case "skills": {
-        if (position.top < (window.innerHeight)) {    /*bug when unmounted when scrooled by*/
+        if (position.top < (window.innerHeight)) {    /*bug when unmounted when user scroll below element*/
           setShowSkills(true);
         } else {
           setShowSkills(false);
@@ -72,6 +92,14 @@ export default function Home() {
         }
         break;
       }
+      case "git": {
+        if (position.top < (window.innerHeight) && position.bottom >= 0) {
+          setShowGit(true);
+        } else {
+          setShowGit(false);
+        }
+        break;
+      }
       default: {
         break;
       }
@@ -79,7 +107,6 @@ export default function Home() {
     }
 
   }
-
   useEffect(() => {
     window.addEventListener("scroll", () => {
       const skillsPosition = skills.current.getBoundingClientRect();
@@ -87,14 +114,17 @@ export default function Home() {
       const profilePosition = profile.current.getBoundingClientRect();
       const presentationPosition = presentation.current.getBoundingClientRect();
       const workPosition = work.current.getBoundingClientRect();
+      const gitPosition = git.current.getBoundingClientRect();
       hideOrShowElement(skillsPosition, "skills");
       hideOrShowElement(profilePosition, "profile");
       hideOrShowElement(presentationPosition, "presentation");
       hideOrShowElement(workPosition, "work");
       hideOrShowElement(contactPosition, "contact");
+      hideOrShowElement(gitPosition, "git");
 
     })
   }, [])
+  /////////////////////////////////////////////////////////
 
   return (
     <React.Fragment>
@@ -110,11 +140,11 @@ export default function Home() {
               </section>
             </ComponentAnimation>
           </div>
-          <IndexElementMargin />
+          <IndexElementMargin distance={distanceElements} />
           <Centralizer>
             <DecoAnimThree />
           </Centralizer>
-          <IndexElementMargin />
+          <IndexElementMargin distance={distanceElements} />
           <div ref={presentation}>
             <ComponentAnimation in={showPresentation}>
               <section style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#f7ffdd", padding: "20px 50px 50px 50px" }}>
@@ -124,11 +154,11 @@ export default function Home() {
               </section>
             </ComponentAnimation>
           </div>
-          <IndexElementMargin />
+          <IndexElementMargin distance={distanceElements} />
           <Centralizer>
             <DecoAnimThree />
           </Centralizer>
-          <IndexElementMargin />
+          <IndexElementMargin distance={distanceElements} />
           <div ref={skills}>
             <ComponentAnimation unmountOnExit in={showSkills}>
               <section style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#dcbf85", padding: "20px 50px 50px 50px" }}>
@@ -138,11 +168,25 @@ export default function Home() {
               </section>
             </ComponentAnimation>
           </div>
-          <IndexElementMargin />
+          <IndexElementMargin distance={distanceElements} />
           <Centralizer>
             <DecoAnimThree />
           </Centralizer>
-          <IndexElementMargin />
+          <IndexElementMargin distance={distanceElements} />
+          <div ref={git}>
+            <ComponentAnimation in={showGit}>
+              <section style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#FBD1A2", padding: "20px 50px 50px 50px" }}>
+                <Centralizer column>
+                  <GitRepos />
+                </Centralizer>
+              </section>
+            </ComponentAnimation>
+          </div>
+          <IndexElementMargin distance={distanceElements} />
+          <Centralizer>
+            <DecoAnimThree />
+          </Centralizer>
+          <IndexElementMargin distance={distanceElements} />
           <div ref={work}>
             <ComponentAnimation in={showWork}>
               <section style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#FBD1A2", padding: "20px 50px 50px 50px" }}>
@@ -152,21 +196,11 @@ export default function Home() {
               </section>
             </ComponentAnimation>
           </div>
-          <IndexElementMargin />
+          <IndexElementMargin distance={distanceElements} />
           <Centralizer>
             <DecoAnimThree />
           </Centralizer>
-          <IndexElementMargin />
-          <div >
-            <ComponentAnimation in={true}>
-              <section style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#FBD1A2", padding: "20px 50px 50px 50px" }}>
-                <Centralizer column>
-                  <GitRepos/>
-                </Centralizer>
-              </section>
-            </ComponentAnimation>
-          </div>
-          <IndexElementMargin />
+          <IndexElementMargin distance={distanceElements} />
           <div ref={contact}>
             <ComponentAnimation in={showContact}>
               <div style={{ textAlign: "center", maxWidth: "100%", padding: "20px 50px 50px 50px" }}>
@@ -177,7 +211,7 @@ export default function Home() {
             </ComponentAnimation>
           </div>
           <DecoAnim />
-          <IndexElementMargin />
+          <IndexElementMargin distance={distanceElements} />
         </div>
       </Centralizer>
     </React.Fragment >

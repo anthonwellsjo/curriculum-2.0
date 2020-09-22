@@ -60,7 +60,7 @@ const Skills = props => {
                                     </div>
                                 </Col>
                                 <Col>
-                                    <ThumbsUp in={anim.show} duration={2000} tot={skill.tot} />
+                                    <ThumbsUp in={anim.show} duration={1000} tot={skill.tot} />
                                 </Col>
                             </Row>
                         </figure>
