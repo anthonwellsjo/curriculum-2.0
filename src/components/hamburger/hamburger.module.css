@@ -1,10 +1,23 @@
-@media(min-width: 526px) {
-    .container {
-        display: none;
-    }
+@media (min-width: 526px) {
+  .container {
+    transform: translateY(50px);
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+  }
+}
+
+/* HORIZONtAL DEVICE */
+
+@media (max-height: 525px) and (min-width: 525px) {
+  .container {
+    transform: translateY(0);
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 1;
+  }
 }
 
 .container {
+  transition: opacity 0.3s, transform 0.3s;
   position: fixed;
   left: 0;
   bottom: 5px;
@@ -13,16 +26,16 @@
 }
 .bar1,
 .bar2,
-.bar3{
+.bar3 {
   transform: rotate(0deg);
-  width: 30px;
-  height: 5px;
+  width: 50px;
+  height: 2px;
+  border-radius: 3px;
   background-color: black;
   margin: 3px 0;
-  box-shadow: 1px 1px white ;
-  border-radius: 5px;
+  opacity: 0.4;
 }
 
 .hide {
-    opacity: 0;
+  opacity: 0;
 }

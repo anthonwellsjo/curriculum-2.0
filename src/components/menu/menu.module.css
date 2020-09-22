@@ -15,6 +15,15 @@
   }
 }
 
+@media (max-height: 525px) and (min-width: 525px) {
+  .menu {
+    display: none;
+  }
+  .mobileMenu {
+    display: block;
+  }
+}
+
 /* desktop menu */
 .menu {
   background-color: #e6ccbe;

@@ -3,12 +3,27 @@
   max-width: 850px;
 }
 
+/* DESKTOP */
+
 @media (min-width: 526px) {
   .frame {
     margin-top: 100px;
   }
 }
+
+
+/* MOBILE DEVICE */
+
 @media (max-width: 525px) {
+  .frame {
+    margin-top: 10px;
+  }
+}
+
+
+/* HORIZONtAL DEVICE */
+
+@media (max-height: 525px) and (min-width: 525px) {
   .frame {
     margin-top: 10px;
   }

@@ -18,6 +18,15 @@
   }
 }
 
+/* HORIZONTAL DEVICE*/
+@media (max-height: 525px) and (min-width: 525px) {
+  .container {
+    transform: translateY(-50px);
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+  }
+}
+
 .line {
   width: 50px;
   height: 2px;
