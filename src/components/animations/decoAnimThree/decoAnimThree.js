@@ -3,11 +3,12 @@ import Centralizer from '../../layout/centralizer/centralizer';
 import classes from './decoAnimThree.module.css';
 import gatsby from '../../../images/icons/gatsby.png';
 import react from '../../../images/icons/react.png';
+import classnames from 'classnames';
 
 const DecoAnimThree = () => {
     return (
 
-        <div className={classes.container}>
+        <div className={classnames(classes.container, "hideOnHorizontal")}>
             <Centralizer column space>
                 <div className={classes.stick1}>
                     <div className={classes.text}>

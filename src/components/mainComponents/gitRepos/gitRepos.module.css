@@ -57,3 +57,11 @@
     font-weight: 500;
   }
 }
+
+/*REPEATING GLOBAL CSS */
+
+@media (max-height: 525px) and (min-width: 525px) {
+  .container {
+    display: none;
+  }
+}

@@ -114,5 +114,18 @@ body {
 @media (max-height: 525px) and (min-width: 525px) {
   .elementContent {
     display: none;
+    background-color: red;
+  }
+  .componentHeader {
+    width: 90%;
+    height: 90%;
+    padding: 5px;
+  }
+  .componentSection {
+    width: 100px;
+    height: 100px;
+  }
+  .hideOnHorizontal {
+    display: none;
   }
 }

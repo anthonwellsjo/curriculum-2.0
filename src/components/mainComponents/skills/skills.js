@@ -43,10 +43,10 @@ const Skills = props => {
 
     return (
         <>
-            <header>
+            <header className="componentHeader">
                 <h2>Skills</h2>
             </header>
-            <InnerTextHolder>
+            <InnerTextHolder classHolder="elementContent">
                 {skills.map((skill) => {
                     return (
                         <figure className={classes.figure} key={skill.skill}>

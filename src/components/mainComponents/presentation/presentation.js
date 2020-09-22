@@ -22,7 +22,7 @@ const Presentation = props => {
     }
     return (
         <>
-            <header>
+            <header className="componentHeader">
                 <h2>Who am I?</h2>
             </header>
             <InnerTextHolder classHolder="elementContent">

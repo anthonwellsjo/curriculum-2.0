@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import repoImg from '../../../images/icons/repo.png';
 import classes from './gitRepos.module.css';
 import Centralizer from '../../layout/centralizer/centralizer';
+import classnames from 'classnames';
 
 let DATA = "";
 
@@ -35,10 +36,10 @@ const GitRepos = props => {
 
     return (
         <>
-            <header>
+            <header className="componentHeader">
                 <h2>Gits</h2>
             </header>
-            <div className={classes.container}>
+            <div className={classnames(classes.container, "elementContent")}>
                 {jsonFetched && DATA.map(repo => {
                     return (
                         <div key={repo.name} className={classes.repoBox} onClick={() => window.open(repo.html_url, "_blank")} >

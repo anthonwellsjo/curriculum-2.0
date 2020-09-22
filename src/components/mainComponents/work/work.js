@@ -13,10 +13,10 @@ const Work = props => {
     ]
     return (
         <>
-            <header>
+            <header className="componentHeader">
                 <h2>Work Experience</h2>
             </header>
-            <InnerTextHolder>
+            <InnerTextHolder classHolder="elementContent">
                 {work.map(work => {
                     return (
                         <figure className={classes.figure} key={work.title}>

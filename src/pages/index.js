@@ -132,7 +132,7 @@ export default function Home() {
           </Centralizer>
           <div ref={profile}>
             <ComponentAnimation in={showProfile}>
-              <section style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#d0e3cc", padding: "50px 50px 50px 50px" }}>
+              <section className="componentSection" style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#d0e3cc", padding: "50px 50px 50px 50px" }}>
                 <Profile />
               </section>
             </ComponentAnimation>
@@ -144,7 +144,7 @@ export default function Home() {
           <IndexElementMargin distance={distanceElements} />
           <div ref={presentation}>
             <ComponentAnimation in={showPresentation}>
-              <section style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#f7ffdd", padding: "20px 50px 50px 50px" }}>
+              <section className="componentSection" style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#f7ffdd", padding: "20px 50px 50px 50px" }}>
                 <Centralizer column>
                   <Presentation />
                 </Centralizer>
@@ -158,7 +158,7 @@ export default function Home() {
           <IndexElementMargin distance={distanceElements} />
           <div ref={skills}>
             <ComponentAnimation unmountOnExit in={showSkills}>
-              <section style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#dcbf85", padding: "20px 50px 50px 50px" }}>
+              <section className="componentSection" style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#dcbf85", padding: "20px 50px 50px 50px" }}>
                 <Centralizer column>
                   <Skills />
                 </Centralizer>
@@ -172,7 +172,7 @@ export default function Home() {
           <IndexElementMargin distance={distanceElements} />
           <div ref={git}>
             <ComponentAnimation in={showGit}>
-              <section style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#FBD1A2", padding: "20px 50px 50px 50px" }}>
+              <section className="componentSection" style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#FBD1A2", padding: "20px 50px 50px 50px" }}>
                 <Centralizer column>
                   <GitRepos />
                 </Centralizer>
@@ -186,7 +186,7 @@ export default function Home() {
           <IndexElementMargin distance={distanceElements} />
           <div ref={work}>
             <ComponentAnimation in={showWork}>
-              <section style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#FBD1A2", padding: "20px 50px 50px 50px" }}>
+              <section className="componentSection" style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#FBD1A2", padding: "20px 50px 50px 50px" }}>
                 <Centralizer column>
                   <Work />
                 </Centralizer>
