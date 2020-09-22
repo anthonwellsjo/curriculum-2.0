@@ -17,15 +17,45 @@ import GitRepos from "../components/mainComponents/gitRepos/gitRepos";
 
 export default function Home() {
 
+  //////////////////////////////////////////////element render on screen width condition
+  const [renderElement, setRenderElement] = useState({ renderAnim: true })
+
+
   //////////////////////////////////////////////element distance
   const [distanceElements, setDistanceElements] = useState(70);
   document.onmousemove = onMouseMoveEvenetHandler;
   function onMouseMoveEvenetHandler(e) {
-    console.log(e.clientY)
-    if (e.clientY < 180) {
-      setDistanceElements(100);
-    } else {
-      setDistanceElements(75);
+    if (window.innerWidth >= 525) {
+      if (e.clientY < 180) {
+        setDistanceElements(100);
+      } else {
+        setDistanceElements(75);
+      }
+    }
+  }
+
+  const setDistanceBtwElementsForDedicatedMedia = () => {
+    //mobile
+    if (window.innerWidth <= 525) {
+      setDistanceElements(10);
+    }
+    if (window.innerWidth > 525) {
+      setDistanceElements(70);
+    }
+  }
+
+  const setRenderElementsForDedicatedMedia = () => {
+    //mobile
+    if (window.innerWidth <= 525 && window.innerHeight > 525) {
+      setRenderElement(prev => ({ ...prev, renderAnim: true }))
+    }
+    //desktop
+    if (window.innerWidth > 525 && window.innerWidth < window.innerHeight) {
+      setRenderElement(prev => ({ ...prev, renderAnim: true }))
+    }
+    //desktop
+    if (window.innerWidth > 525 && window.innerHeight <= 525) {
+      setRenderElement(prev => ({ ...prev, renderAnim: false }))
     }
   }
 
@@ -105,6 +135,8 @@ export default function Home() {
 
   }
   useEffect(() => {
+    setRenderElementsForDedicatedMedia();
+    setDistanceBtwElementsForDedicatedMedia();
     window.addEventListener("scroll", () => {
       const skillsPosition = skills.current.getBoundingClientRect();
       const contactPosition = contact.current.getBoundingClientRect();
@@ -120,6 +152,10 @@ export default function Home() {
       hideOrShowElement(gitPosition, "git");
 
     })
+    window.addEventListener("resize", () => {
+      setDistanceBtwElementsForDedicatedMedia();
+      setRenderElementsForDedicatedMedia();
+    })
   }, [])
   /////////////////////////////////////////////////////////
 
@@ -130,9 +166,9 @@ export default function Home() {
           <Centralizer column>
             <Menu work={work} contact={contact} skills={skills} />
           </Centralizer>
-          <div ref={profile}>
+          <div ref={profile} className="profileComponentHolder">
             <ComponentAnimation in={showProfile}>
-              <section className="componentSection" style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#d0e3cc", padding: "50px 50px 50px 50px" }}>
+              <section className="profileComponentSection" style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#d0e3cc", padding: "50px 50px 50px 50px" }}>
                 <Profile />
               </section>
             </ComponentAnimation>
@@ -142,7 +178,7 @@ export default function Home() {
             <DecoAnimThree />
           </Centralizer>
           <IndexElementMargin distance={distanceElements} />
-          <div ref={presentation}>
+          <div ref={presentation} className="componentHolder">
             <ComponentAnimation in={showPresentation}>
               <section className="componentSection" style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#f7ffdd", padding: "20px 50px 50px 50px" }}>
                 <Centralizer column>
@@ -152,11 +188,15 @@ export default function Home() {
             </ComponentAnimation>
           </div>
           <IndexElementMargin distance={distanceElements} />
-          <Centralizer>
-            <DecoAnimThree />
-          </Centralizer>
-          <IndexElementMargin distance={distanceElements} />
-          <div ref={skills}>
+          {renderElement.renderAnim && (
+            <>
+              <Centralizer>
+                <DecoAnimThree />
+              </Centralizer>
+              <IndexElementMargin distance={distanceElements} />
+            </>
+          )}
+          <div ref={skills} className="componentHolder">
             <ComponentAnimation unmountOnExit in={showSkills}>
               <section className="componentSection" style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#dcbf85", padding: "20px 50px 50px 50px" }}>
                 <Centralizer column>
@@ -166,11 +206,15 @@ export default function Home() {
             </ComponentAnimation>
           </div>
           <IndexElementMargin distance={distanceElements} />
-          <Centralizer>
-            <DecoAnimThree />
-          </Centralizer>
-          <IndexElementMargin distance={distanceElements} />
-          <div ref={git}>
+          {renderElement.renderAnim && (
+            <>
+              <Centralizer>
+                <DecoAnimThree />
+              </Centralizer>
+              <IndexElementMargin distance={distanceElements} />
+            </>
+          )}
+          <div ref={git} className="componentHolder">
             <ComponentAnimation in={showGit}>
               <section className="componentSection" style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#FBD1A2", padding: "20px 50px 50px 50px" }}>
                 <Centralizer column>
@@ -180,11 +224,15 @@ export default function Home() {
             </ComponentAnimation>
           </div>
           <IndexElementMargin distance={distanceElements} />
-          <Centralizer>
-            <DecoAnimThree />
-          </Centralizer>
-          <IndexElementMargin distance={distanceElements} />
-          <div ref={work}>
+          {renderElement.renderAnim && (
+            <>
+              <Centralizer>
+                <DecoAnimThree />
+              </Centralizer>
+              <IndexElementMargin distance={distanceElements} />
+            </>
+          )}
+          <div ref={work} className="componentHolder">
             <ComponentAnimation in={showWork}>
               <section className="componentSection" style={{ textAlign: "center", maxWidth: "100%", backgroundColor: "#FBD1A2", padding: "20px 50px 50px 50px" }}>
                 <Centralizer column>
@@ -194,11 +242,15 @@ export default function Home() {
             </ComponentAnimation>
           </div>
           <IndexElementMargin distance={distanceElements} />
-          <Centralizer>
-            <DecoAnimThree />
-          </Centralizer>
-          <IndexElementMargin distance={distanceElements} />
-          <div ref={contact}>
+          {renderElement.renderAnim && (
+            <>
+              <Centralizer>
+                <DecoAnimThree />
+              </Centralizer>
+              <IndexElementMargin distance={distanceElements} />
+            </>
+          )}
+          <div ref={contact} className="componentHolder">
             <ComponentAnimation in={showContact}>
               <div style={{ textAlign: "center", maxWidth: "100%", padding: "20px 50px 50px 50px" }}>
                 <Centralizer column>
