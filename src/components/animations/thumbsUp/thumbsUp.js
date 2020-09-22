@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Centralizer from '../../centralizer/centralizer';
+import Centralizer from '../../layout/centralizer/centralizer';
 import thumb from '../../../images/icons/thumb2.png';
 import classes from './thumbsUp.module.css';
 

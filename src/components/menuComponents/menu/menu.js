@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './menu.module.css';
 import classnames from 'classnames';
 import Hamburger from '../hamburger/hamburger';
-import Centralizer from '../centralizer/centralizer';
+import Centralizer from '../../layout/centralizer/centralizer';
 import IdleMenu from '../idleMenu/idleMenu';
 
 const Menu = props => {
@@ -20,7 +20,7 @@ const Menu = props => {
         } else {
             setShowMenu(false);
             setTimeout(() => {
-                if (+currentScroll == +window.pageYOffset) {
+                if (+currentScroll === +window.pageYOffset) {
                     setShowIdleMenu(true);
                 }
             }, 2000)
@@ -51,6 +51,9 @@ const Menu = props => {
             case "contact": {
                 window.scrollTo(0, props.contact.current.offsetTop)
                 break;
+            }
+            default:{
+                console.log("Error", this);
             }
         }
     }

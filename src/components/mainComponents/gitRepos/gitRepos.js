@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import InnerTextHolder from '../innerTextHolder/innerTextHolder';
-import repoImg from '../../images/icons/repo.png';
+import repoImg from '../../../images/icons/repo.png';
 import classes from './gitRepos.module.css';
-import Centralizer from '../centralizer/centralizer';
-import Row from '../layout/row/row';
-import Col from '../layout/col/col';
+import Centralizer from '../../layout/centralizer/centralizer';
 
 let DATA = "";
 

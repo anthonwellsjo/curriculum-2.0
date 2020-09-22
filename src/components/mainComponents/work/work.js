@@ -1,8 +1,8 @@
 import React from 'react';
-import InnerTextHolder from '../innerTextHolder/innerTextHolder';
+import InnerTextHolder from '../../layout/innerTextHolder/innerTextHolder';
 import classes from './work.module.css';
-import Col from '../layout/col/col';
-import Row from '../layout/row/row';
+import Col from '../../layout/col/col';
+import Row from '../../layout/row/row';
 
 const Work = props => {
     const work = [

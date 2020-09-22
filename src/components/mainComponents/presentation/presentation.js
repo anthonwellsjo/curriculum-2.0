@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import InnerTextHolder from '../innerTextHolder/innerTextHolder';
+import React from 'react';
+import InnerTextHolder from '../../layout/innerTextHolder/innerTextHolder';
 
 const Presentation = props => {
 
@@ -25,7 +25,7 @@ const Presentation = props => {
             <header>
                 <h2>Who am I?</h2>
             </header>
-            <InnerTextHolder>
+            <InnerTextHolder classHolder="elementContent">
                 <p>Born and raised in Åsa, Sweden. Have lived abroad since 2008. First in Paris for 8 years, and now in Rome since {getYearsSince(new Date(2015, 12, 15))}. Married and father of three. Ridiculously passionate of programming, since I started programming {getYearsSince(new Date(2019, 8, 15))} ago.</p>
             </InnerTextHolder>
         </>

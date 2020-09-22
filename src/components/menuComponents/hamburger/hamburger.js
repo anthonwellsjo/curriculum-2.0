@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './hamburger.module.css';
 import classnames from 'classnames';
-import Centralizer from '../centralizer/centralizer';
+import Centralizer from '../../layout/centralizer/centralizer';
 
 const Hamburger = props => {
     return (

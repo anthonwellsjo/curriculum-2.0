@@ -1,11 +1,10 @@
 import React from 'react';
-import Centralizer from '../centralizer/centralizer';
-import InnerTextHolder from '../innerTextHolder/innerTextHolder';
+import Centralizer from '../../layout/centralizer/centralizer';
 import classes from './contact.module.css';
-import google from '../../images/icons/google.png';
-import app from '../../images/icons/app.png';
-import linkedin from '../../images/icons/in.png';
-import git from '../../images/icons/git.png';
+import google from '../../../images/icons/google.png';
+import app from '../../../images/icons/app.png';
+import linkedin from '../../../images/icons/in.png';
+import git from '../../../images/icons/git.png';
 
 const icons = {
     google: "mailto:anthonwellsjo@gmail.com",

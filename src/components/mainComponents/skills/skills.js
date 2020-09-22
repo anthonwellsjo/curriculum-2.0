@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import classes from './skills.module.css';
-import Row from '../layout/row/row';
-import Col from '../layout/col/col';
-import ProgressMeter from '../progressMeter/progressMeter';
-import InnerTextHolder from '../innerTextHolder/innerTextHolder';
-import ThumbsUp from '../animations/thumbsUp/thumbsUp';
+import Row from '../../layout/row/row';
+import Col from '../../layout/col/col';
+import ProgressMeter from '../../animations/progressMeter/progressMeter';
+import InnerTextHolder from '../../layout/innerTextHolder/innerTextHolder';
+import ThumbsUp from '../../animations/thumbsUp/thumbsUp';
 
 
 

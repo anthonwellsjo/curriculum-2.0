@@ -1,5 +1,5 @@
 import React from 'react';
-import Centralizer from '../centralizer/centralizer';
+import Centralizer from '../../layout/centralizer/centralizer';
 import classes from './idleMenu.module.css';
 import classnames from 'classnames';
 

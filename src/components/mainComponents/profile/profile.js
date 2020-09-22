@@ -1,11 +1,11 @@
 
 import React from 'react';
-import photo from '../../images/portrait.jpg';
+import photo from '../../../images/portrait.jpg';
 import classes from './profile.module.css';
-import Centralizer from '../centralizer/centralizer';
-import Row from '../layout/row/row';
-import Col from '../layout/col/col';
-import InnerTextHolder from '../innerTextHolder/innerTextHolder';
+import Centralizer from '../../layout/centralizer/centralizer';
+import Row from '../../layout/row/row';
+import Col from '../../layout/col/col';
+import InnerTextHolder from '../../layout/innerTextHolder/innerTextHolder';
 
 
 const Profile = props => {

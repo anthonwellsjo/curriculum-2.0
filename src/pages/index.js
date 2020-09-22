@@ -1,19 +1,17 @@
 import React, { useEffect, useRef, useState } from "react"
-import Menu from "../components/menu/menu"
-import Profile from '../components/profile/profile'
-import Centralizer from '../components/centralizer/centralizer';
-import Skills from "../components/skills/skills";
-import ComponentAnimation from '../components/componentAnimation/componentAnimation';
-import Presentation from '../components/presentation/presentation';
-import Work from "../components/work/work";
-import Contact from "../components/contact/contact";
+import Menu from "../components/menuComponents/menu/menu"
+import Profile from '../components/mainComponents/profile/profile'
+import Centralizer from '../components/layout/centralizer/centralizer';
+import Skills from "../components/mainComponents/skills/skills";
+import ComponentAnimation from '../components/animations/componentAnimation/componentAnimation';
+import Presentation from '../components/mainComponents/presentation/presentation';
+import Work from "../components/mainComponents/work/work";
+import Contact from "../components/mainComponents/contact/contact";
 import classes from "./index.module.css";
-import DecoAnim from "../decoAnim/decoAnim";
-import DecoAnimTwo from "../components/animations/decoAnimTwo/decoAnimTwo";
+import DecoAnim from "../components/animations/decoAnim/decoAnim";
 import DecoAnimThree from "../components/animations/decoAnimThree/decoAnimThree";
-import DecoAnimFour from "../components/animations/decoAnimFour/decoAnimFour";
 import IndexElementMargin from "../components/layout/indexElementMargin/indexElementMargin";
-import GitRepos from "../components/gitRepos/gitRepos";
+import GitRepos from "../components/mainComponents/gitRepos/gitRepos";
 
 
 
@@ -22,7 +20,6 @@ export default function Home() {
   //////////////////////////////////////////////element distance
   const [distanceElements, setDistanceElements] = useState(70);
   document.onmousemove = onMouseMoveEvenetHandler;
-  let clientPos;
   function onMouseMoveEvenetHandler(e) {
     console.log(e.clientY)
     if (e.clientY < 180) {
@@ -31,7 +28,7 @@ export default function Home() {
       setDistanceElements(75);
     }
   }
-  
+
 
 
 

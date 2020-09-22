@@ -1,5 +1,5 @@
 import React from 'react';
-import Centralizer from '../components/centralizer/centralizer';
+import Centralizer from '../../layout/centralizer/centralizer';
 import classes from './decoAnim.module.css';
 
 const DecoAnim = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import Centralizer from '../../centralizer/centralizer';
+import Centralizer from '../../layout/centralizer/centralizer';
 import classes from './decoAnimThree.module.css';
 import gatsby from '../../../images/icons/gatsby.png';
 import react from '../../../images/icons/react.png';

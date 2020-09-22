@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './sideMenu.module.css';
 import classnames from 'classnames';
-import Centralizer from '../centralizer/centralizer';
 
 const SideMenu = props => {
 

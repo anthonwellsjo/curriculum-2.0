@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import classes from './progressMeter.module.css';
 import classnames from 'classnames';
-import Centralizer from '../centralizer/centralizer';
+import Centralizer from '../../layout/centralizer/centralizer';
 
 const ProgressMeter = props => {
     const [anim, setAnim] = useState({ width: "0", transition: "width 5s" })

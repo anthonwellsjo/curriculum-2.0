@@ -10,23 +10,11 @@
   width: 3px;
   border-radius: 5px;
   border-radius: 5px;
-  background-color: black;
-}
-.stick12 {
-  height: 10px;
-  width: 3px;
-  border-radius: 5px;
-  border-radius: 5px;
-  background-color: black;
+  background-color: #fc7753;
 }
 
-.stick2 {
-  height: 2px;
-  width: 50px;
-  background-color: white;
-  margin-bottom: -15px;
-  animation: sweep 20s infinite linear;
-}
+
+
 
 .stick1:hover {
   background-color: red;
