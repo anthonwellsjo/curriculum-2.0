@@ -25,6 +25,8 @@ const Skills = props => {
         { skill: "React.Js", tot: 90 },
         { skill: "Gatsby.Js", tot: 80 },
         { skill: "Xamarin", tot: 50 },
+        { skill: "JQuery", tot: 80 },
+        { skill: "ASP.Net", tot: 75 },
         { skill: "Java", tot: 0 },
         
     ]
