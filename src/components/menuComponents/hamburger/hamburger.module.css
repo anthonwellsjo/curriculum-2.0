@@ -28,12 +28,12 @@
 .bar2,
 .bar3 {
   transform: rotate(0deg);
-  width: 50px;
-  height: 2px;
+  width: 40px;
+  height: 3px;
   border-radius: 3px;
   background-color: black;
   margin: 3px 0;
-  opacity: 0.4;
+  opacity: 1;
 }
 
 .hide {
