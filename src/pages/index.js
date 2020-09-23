@@ -70,12 +70,18 @@ export default function Home() {
   let git = useRef();
   let presentation = useRef();
   let work = useRef();
+  let animation1 = useRef();
+  let animation2 = useRef();
+  let animation3 = useRef();
+  let animation4 = useRef();
+  let animation5 = useRef();
   const [showProfile, setShowProfile] = useState(true)
   const [showContact, setShowContact] = useState(false)
   const [showWork, setShowWork] = useState(false)
   const [showPresentation, setShowPresentation] = useState(true)
   const [showSkills, setShowSkills] = useState(false);
   const [showGit, setShowGit] = useState(false);
+  const [showAnimation, setShowAnimation] = useState({ 1: true, 2: false, 3: false, 4: false, 5: false });
   const hideOrShowElement = (position, type) => {
 
     switch (type) {
@@ -127,6 +133,46 @@ export default function Home() {
         }
         break;
       }
+      case "animation1": {
+        if (position.top < (window.innerHeight) && position.bottom >= 0) {
+          setShowAnimation(prev => ({ ...prev, 1: true }));
+        } else {
+          setShowAnimation(prev => ({ ...prev, 1: false }));
+        }
+        break;
+      }
+      case "animation2": {
+        if (position.top < (window.innerHeight) && position.bottom >= 0) {
+          setShowAnimation(prev => ({ ...prev, 2: true }));
+        } else {
+          setShowAnimation(prev => ({ ...prev, 2: false }));
+        }
+        break;
+      }
+      case "animation3": {
+        if (position.top < (window.innerHeight) && position.bottom >= 0) {
+          setShowAnimation(prev => ({ ...prev, 3: true }));
+        } else {
+          setShowAnimation(prev => ({ ...prev, 3: false }));
+        }
+        break;
+      }
+      case "animation4": {
+        if (position.top < (window.innerHeight) && position.bottom >= 0) {
+          setShowAnimation(prev => ({ ...prev, 4: true }));
+        } else {
+          setShowAnimation(prev => ({ ...prev, 4: false }));
+        }
+        break;
+      }
+      case "animation5": {
+        if (position.top < (window.innerHeight) && position.bottom >= 0) {
+          setShowAnimation(prev => ({ ...prev, 5: true }));
+        } else {
+          setShowAnimation(prev => ({ ...prev, 5: false }));
+        }
+        break;
+      }
       default: {
         break;
       }
@@ -144,12 +190,23 @@ export default function Home() {
       const presentationPosition = presentation.current.getBoundingClientRect();
       const workPosition = work.current.getBoundingClientRect();
       const gitPosition = git.current.getBoundingClientRect();
+      const anim1Position = animation1.current.getBoundingClientRect();
+      const anim2Position = animation2.current.getBoundingClientRect();
+      const anim3Position = animation3.current.getBoundingClientRect();
+      const anim4Position = animation4.current.getBoundingClientRect();
+      const anim5Position = animation5.current.getBoundingClientRect();
+
       hideOrShowElement(skillsPosition, "skills");
       hideOrShowElement(profilePosition, "profile");
       hideOrShowElement(presentationPosition, "presentation");
       hideOrShowElement(workPosition, "work");
       hideOrShowElement(contactPosition, "contact");
       hideOrShowElement(gitPosition, "git");
+      hideOrShowElement(anim1Position, "animation1");
+      hideOrShowElement(anim2Position, "animation2");
+      hideOrShowElement(anim3Position, "animation3");
+      hideOrShowElement(anim4Position, "animation4");
+      hideOrShowElement(anim5Position, "animation5");
 
     })
     window.addEventListener("resize", () => {
@@ -174,9 +231,13 @@ export default function Home() {
             </ComponentAnimation>
           </div>
           <IndexElementMargin distance={distanceElements} />
-          <Centralizer>
-            <DecoAnimThree />
-          </Centralizer>
+          <div ref={animation1}>
+            <ComponentAnimation in={showAnimation[1]}>
+              <Centralizer>
+                <DecoAnimThree />
+              </Centralizer>
+            </ComponentAnimation>
+          </div>
           <IndexElementMargin distance={distanceElements} />
           <div ref={presentation} className="componentHolder">
             <ComponentAnimation in={showPresentation}>
@@ -190,9 +251,13 @@ export default function Home() {
           <IndexElementMargin distance={distanceElements} />
           {renderElement.renderAnim && (
             <>
-              <Centralizer>
-                <DecoAnimThree />
-              </Centralizer>
+              <div ref={animation2}>
+                <ComponentAnimation in={showAnimation[2]}>
+                  <Centralizer>
+                    <DecoAnimThree />
+                  </Centralizer>
+                </ComponentAnimation>
+              </div>
               <IndexElementMargin distance={distanceElements} />
             </>
           )}
@@ -208,9 +273,13 @@ export default function Home() {
           <IndexElementMargin distance={distanceElements} />
           {renderElement.renderAnim && (
             <>
-              <Centralizer>
-                <DecoAnimThree />
-              </Centralizer>
+              <div ref={animation3}>
+                <ComponentAnimation in={showAnimation[3]}>
+                  <Centralizer>
+                    <DecoAnimThree />
+                  </Centralizer>
+                </ComponentAnimation>
+              </div>
               <IndexElementMargin distance={distanceElements} />
             </>
           )}
@@ -226,9 +295,13 @@ export default function Home() {
           <IndexElementMargin distance={distanceElements} />
           {renderElement.renderAnim && (
             <>
-              <Centralizer>
-                <DecoAnimThree />
-              </Centralizer>
+              <div ref={animation4}>
+                <ComponentAnimation in={showAnimation[4]}>
+                  <Centralizer>
+                    <DecoAnimThree />
+                  </Centralizer>
+                </ComponentAnimation>
+              </div>
               <IndexElementMargin distance={distanceElements} />
             </>
           )}
@@ -244,9 +317,13 @@ export default function Home() {
           <IndexElementMargin distance={distanceElements} />
           {renderElement.renderAnim && (
             <>
-              <Centralizer>
-                <DecoAnimThree />
-              </Centralizer>
+              <div ref={animation5}>
+                <ComponentAnimation in={showAnimation[5]}>
+                  <Centralizer>
+                    <DecoAnimThree />
+                  </Centralizer>
+                </ComponentAnimation>
+              </div>
               <IndexElementMargin distance={distanceElements} />
             </>
           )}

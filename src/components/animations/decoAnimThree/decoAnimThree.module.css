@@ -20,11 +20,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 35px;
-  width: 35px;
+  height: 45px;
+  width: 45px;
   border-radius: 10px;
-  border: dashed #585b56 2px;
-  animation: roll 5s infinite;
+  border: double #585b56 4px;
+  animation: roll 20s infinite;
   transition: height 0.5s, width 0.5s, background-color 5s, border 0.5s;
 }
 .stick1:hover{
@@ -44,10 +44,10 @@
 
 @media (max-width: 525px) {
   .stick1 {
-    height: 20px;
-    width: 20px;
-    transition: height 0.5s, width 0.5s, border 0.5s;
-    border: dashed #585b56 1px;
+    height: 25px;
+    width: 25px;
+    transition: height 0.5s, width 0.5s, border 0.5s, background-color 5s;
+    border: double #585b56 px;
   }
 }
 
