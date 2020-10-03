@@ -14,7 +14,7 @@ const ThumbsUp = props => {
                 return props.tot / 100
             }
         })()
-        setRotation({ transition: `transform ${props.duration}ms, opacity ${props.duration}ms, filter ${props.duration}ms`, filter: `grayscale(${100 - props.tot}%)`, transform: `rotate(${(props.tot / 100 * 180 + 21600 + 180)}deg)` });
+        setRotation({ transition: `transform ${props.duration}ms, opacity ${props.duration}ms, filter ${props.duration}ms`, filter: `grayscale(${100 - props.tot}%)`, transform: `rotate(${(props.tot / 100 * 180 + 180)}deg)` });
 
     }, [])
     return (
