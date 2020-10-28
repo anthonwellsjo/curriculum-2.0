@@ -29,12 +29,6 @@ img {
   box-shadow: 3px 5px 5px #646e68;
   transition: box-shadow 0.3s;
 }
-section:hover,
-img:hover,
-header:hover {
-  box-shadow: 0px 0px 0px #646e68;
-  transition: box-shadow 0.3s;
-}
 
 ul {
   list-style-type: none;
@@ -49,13 +43,8 @@ header {
   width: 100%;
 }
 
-figure:hover {
-  box-shadow: 1px 1px 3px #646e68;
-  transition: box-shadow 0.3s;
-}
 figure {
   box-shadow: 0px 0px 0px #646e68;
-  transition: box-shadow 0.3s;
 }
 
 body,

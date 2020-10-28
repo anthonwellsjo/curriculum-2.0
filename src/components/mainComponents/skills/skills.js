@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import classes from './skills.module.css';
 import Row from '../../layout/row/row';
 import Col from '../../layout/col/col';
-import ProgressMeter from '../../animations/progressMeter/progressMeter';
 import InnerTextHolder from '../../layout/innerTextHolder/innerTextHolder';
-import ThumbsUp from '../../animations/thumbsUp/thumbsUp';
 
 
 
@@ -28,7 +26,6 @@ const Skills = props => {
         { skill: "JQuery", tot: 80 },
         { skill: "ASP.Net", tot: 75 },
         { skill: "Java", tot: 0 },
-        
     ]
 
     function timer(ms) {
@@ -53,14 +50,6 @@ const Skills = props => {
                             <Row>
                                 <Col>
                                     <p>{skill.skill}</p>
-                                </Col>
-                                <Col>
-                                    <div className={classes.progress}>
-                                        <ProgressMeter in={anim.show} duration={1000} tot={skill.tot} />
-                                    </div>
-                                </Col>
-                                <Col>
-                                    <ThumbsUp in={anim.show} duration={1000} tot={skill.tot} />
                                 </Col>
                             </Row>
                         </figure>
