@@ -7,7 +7,7 @@ h4 {
   text-transform: lowercase;
 }
 p {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Playfair Display;
 }
 a {
   font-family: Maven Pro;
@@ -24,23 +24,9 @@ a:hover {
   color: grey;
   transition: color 0.3s;
 }
-section,
-img {
-  box-shadow: 3px 5px 5px #646e68;
-  transition: box-shadow 0.3s;
-}
 
 ul {
   list-style-type: none;
-}
-
-header {
-  box-shadow: 2px 2px 5px #646e68;
-  transition: box-shadow 0.3s;
-  background-color: #cde7b0;
-  padding-left: 10px;
-  height: 100%;
-  width: 100%;
 }
 
 figure {
@@ -49,9 +35,12 @@ figure {
 
 body,
 html {
-  overflow-x: hidden;
+  overflow: hidden;
+  margin: 0;
 }
 
 body {
   background-color: #dba159;
+  overflow: hidden;
+  margin: 0;
 }
