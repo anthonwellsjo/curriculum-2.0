@@ -1,16 +1,39 @@
 .img {
   border-radius: 100%;
-  box-shadow: 1px 1px 10px rgb(68, 66, 66);
+  box-shadow: 1px 1px 10px rgb(68, 66, 66); 
+  
+}
+
+.hereBtn{
+  color: #cd8987;
+  font-weight: bold;
+  cursor: pointer;
+}
+.name{
+  color: black;
+  font-weight: 900;
+  cursor: pointer;
 }
 
 .photoHolder{
-  
-  transform: translateY(50px);
+  transform: translateY(-50px);
+  position: absolute;
+  top: 200px;
 }
 
+.footer{
+  position: absolute;
+  bottom: 10px;
+}
+
+
+
 .frostedGlass {
+  position: relative;
+  backdrop-filter: blur(2px);
+  top: 40px;
   border-radius: 40px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 10px;
   transition: all .2s;
   width: 500px;
@@ -20,6 +43,7 @@
 
 .presentationText {
   text-align: center;
+  letter-spacing: .5px;
 }
 
 @media (min-width: 700px) {
