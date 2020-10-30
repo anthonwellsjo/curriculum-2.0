@@ -5,7 +5,7 @@ import { useGesture } from 'react-use-gesture'
 import classes from './background.module.css';
 
 const pages = [
-    'https://picsum.photos/200/300',
+    `https://picsum.photos/${window.innerWidth}/${window.innerHeight}`,
     'https://picsum.photos/200/300',
     'https://picsum.photos/200/300',
 ]
@@ -31,8 +31,9 @@ const Background = () => {
     //     </div>
     // ))
 
+
     return (
-        <div style={{backgroundImage:`url(${pages[1]})`}} className={classes.background}>
+        <div style={{backgroundImage:`url(${pages[0]})`}} className={classes.background}>
 
         </div>
     )

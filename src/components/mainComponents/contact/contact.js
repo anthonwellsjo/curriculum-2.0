@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import Centralizer from '../../layout/centralizer/centralizer';
 import classes from './contact.module.css';
 import google from '../../../images/icons/icons8-gmail-50.png';
@@ -15,7 +16,7 @@ const icons = {
     cv: "https://docs.google.com/document/d/14DauHPfdwFJyjsd-Tuxp3lAvxpgwA1erzqx5GIZ5hR4/edit?usp=sharing"
 }
 
-const Contact = () => {
+const Contact = props => {
 
     function openInNewTab(url) {
         var win = window.open(url, '_blank');
@@ -28,11 +29,11 @@ const Contact = () => {
 
     return (
         <div className={classes.contactContainer}>
-            <img src={linkedin} className={classes.icon} onClick={() => onIconClicked(icons.linkedIn)}></img>
-            <img src={git} className={classes.icon} onClick={() => onIconClicked(icons.git)}></img>
-            <img src={google} className={classes.icon} onClick={() => onIconClicked(icons.google)}></img>
-            <img src={app} className={classes.icon} onClick={() => onIconClicked(icons.whatsApp)}></img>
-            <img src={cv} className={classes.icon} onClick={() => onIconClicked(icons.cv)}></img>
+            <img src={linkedin} className={props.small? classnames(classes.icon, classes.small) : classes.icon} onClick={() => onIconClicked(icons.linkedIn)}></img>
+            <img src={git} className={props.small? classnames(classes.icon, classes.small) : classes.icon} onClick={() => onIconClicked(icons.git)}></img>
+            <img src={google} className={props.small? classnames(classes.icon, classes.small) : classes.icon} onClick={() => onIconClicked(icons.google)}></img>
+            <img src={app} className={props.small? classnames(classes.icon, classes.small) : classes.icon} onClick={() => onIconClicked(icons.whatsApp)}></img>
+            <img src={cv} className={props.small? classnames(classes.icon, classes.small) : classes.icon} onClick={() => onIconClicked(icons.cv)}></img>
         </div>
     )
 }

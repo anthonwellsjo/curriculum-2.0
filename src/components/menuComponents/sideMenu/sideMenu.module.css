@@ -1,41 +1,6 @@
-@media (max-width: 399px) {
-  .menu {
-    display: none;
-  }
-}
-
-.menu {
-  background-color: white;
-  position: fixed;
-
-  left: 5%;
-  bottom: 50%;
-  width: 90px;
-  height: 100px;
-  padding-left: 10px;
-  border-radius: 3px;
-
-  transition: opacity 0.3s;
-}
-.hide {
-  
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.div {
-  display: flex;
-  flex-direction: column;
-}
-
-.link1,
-.link2,
-.link3 {
-  color: black;
-  margin: 5px;
-}
-
-@media (max-width: 700px) {
-  .div {
-    width: 400px;
-  }
+.boulder{
+  position: absolute;
+  border-radius: 100%;
+  background-color: hotpink;
+  z-index: 1000;
 }

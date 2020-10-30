@@ -19,7 +19,10 @@ const Portrait = props => {
                     transform: spring.x
                         .interpolate((x) => `scale(${x}`)
                 }}>
-                    <img onClick={props.clicked} style={{ transform: props.landing ? "translateY(0)" : "translateY(-320px)" }} className={classes.img} src={photo} alt="portrait" />
+                    <img onClick={props.clicked} style={{ 
+                        transform: props.landing ? `translateY(0)` : `translateY(-350px)`,
+                        boxShadow: props.landing ? "1px 1px 50px rgb(68, 66, 66)" : "5px 5px 50px rgb(68, 66, 66)"
+                     }} className={classes.img} src={photo} alt="portrait" />
                 </animated.div>
             </div>
         </Centralizer>

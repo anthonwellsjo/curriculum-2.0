@@ -8,7 +8,7 @@ import Col from '../../layout/col/col';
 import InnerTextHolder from '../../layout/innerTextHolder/innerTextHolder';
 import classnames from 'classnames';
 import Contact from '../contact/contact';
-
+import {useSpring, animated} from 'react-spring';
 
 
 

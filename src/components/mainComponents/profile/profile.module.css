@@ -8,6 +8,12 @@
   color: #cd8987;
   font-weight: bold;
   cursor: pointer;
+  text-decoration: none;
+  transition: text-decoration 1s;
+}
+.hereBtn:hover{
+  text-decoration: underline;
+  transition: text-decoration 1s;
 }
 .name{
   color: black;
@@ -39,7 +45,7 @@
   transition: all .2s;
   width: 500px;
   height: 300px;
-  box-shadow: 1px 1px 10px rgb(58, 55, 55);
+  box-shadow: 1px 1px 80px rgb(58, 55, 55);
 }
 
 .presentationText {

@@ -3,7 +3,7 @@
   border-radius: 100%;
   box-shadow: 1px 1px 10px rgb(68, 66, 66);
   width: 200px;
-  z-index: 1000;
+  z-index: 100;
   top: 150px;
   transition: all .3s;
 }

@@ -11,6 +11,11 @@
   filter: none;
 }
 
+.icon.small{
+  width: 20px;
+  height: 20px;
+}
+
 .contactContainer{
   width: 70%;
   display: flex;
