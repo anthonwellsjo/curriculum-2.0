@@ -23,8 +23,10 @@ const Profile = props => {
                             <p className={classes.presentationText}>
                                 Hi,
                                 <br></br>
-                                I'm <span className={classes.name}><strong>Anthon Wellsjö</strong></span> and I'm a full stack web developer from Sweden.
-                                I'm super passionate about programming and I love to build polished and functional web apps.
+                                My name is <span className={classes.name}><strong>Anthon Wellsjö</strong></span> and 
+                                I'm a full stack web developer from Sweden.
+                                I'm super passionate about programming and strive 
+                                to build polished and functional web apps.
                                 <br></br>
                                 <br></br>
                                 See some of my projects <span onClick={props.clickHere} className={classes.hereBtn}>here.</span>

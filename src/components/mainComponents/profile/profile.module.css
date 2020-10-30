@@ -23,6 +23,7 @@
 
 .footer{
   position: absolute;
+  width: 80%;
   bottom: 10px;
 }
 
@@ -43,7 +44,7 @@
 
 .presentationText {
   text-align: center;
-  letter-spacing: .5px;
+  letter-spacing: .7px;
 }
 
 @media (min-width: 700px) {

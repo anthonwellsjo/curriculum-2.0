@@ -3,9 +3,8 @@ import { useSpring, animated, useTransition } from 'react-spring';
 import Profile from '../components/mainComponents/profile/profile'
 import Centralizer from '../components/layout/centralizer/centralizer';
 import classes from "./index.module.css";
-import photo from '../images/portrait.jpg';
-import classnames from 'classnames';
-import Portrait from "../components/portrait/portrait";
+import Portrait from "../components/mainComponents/portrait/portrait";
+import Background from '../components/mainComponents/background/background';
 
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
@@ -30,9 +29,16 @@ export default function Home() {
     setActivePages(prev => ({ ...prev, landing: false, projects: true }));
   }
 
+  const onPhotoClickedEventHandler = () => {
+    if (!activePages.landing) {
+      setActivePages(prev => ({ ...prev, landing: true, projects: false }));
+    }
+  }
+
   return (
 
     < React.Fragment >
+      
       <animated.div style={animationProps}>
         <div onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
           <animated.div style={{ transform: backgroundAnimProps.xy.interpolate(trans1) }}>
@@ -47,7 +53,8 @@ export default function Home() {
           </div>
         </div>
       </animated.div>
-      <Portrait landing={activePages.landing} />
+      <Portrait clicked={onPhotoClickedEventHandler} landing={activePages.landing} />
+      <Background />
     </React.Fragment >
   )
 }
