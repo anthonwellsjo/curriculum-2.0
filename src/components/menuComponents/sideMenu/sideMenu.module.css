@@ -1,6 +1,15 @@
-.boulder{
+.boulder {
   position: absolute;
-  border-radius: 100%;
-  background-color: hotpink;
-  z-index: 1000;
+  background-color: white;
+  height: 1000px;
+  width: 1000px;
+  transition: all .5s;
+}
+
+.menuItem{
+  text-align: right;
+}
+
+.menuHolder{
+  position: absolute;
 }

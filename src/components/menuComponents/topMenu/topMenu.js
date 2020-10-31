@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './menu.module.css';
+import styles from './topMenu.module.css';
 import classnames from 'classnames';
 import IdleMenu from '../idleMenu/idleMenu';
 import Contact from '../../mainComponents/contact/contact';

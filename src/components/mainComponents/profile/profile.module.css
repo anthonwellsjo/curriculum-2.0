@@ -21,11 +21,7 @@
   cursor: pointer;
 }
 
-.photoHolder{
-  transform: translateY(-50px);
-  position: absolute;
-  top: 200px;
-}
+
 
 .footer{
   position: absolute;
