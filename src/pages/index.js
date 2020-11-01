@@ -6,7 +6,7 @@ import classes from "./index.module.css";
 import Portrait from "../components/mainComponents/portrait/portrait";
 import Background from '../components/mainComponents/background/background';
 import TopMenu from '../components/menuComponents/topMenu/topMenu';
-import SideMenu from "../components/menuComponents/sideMenu/sideMenu";
+import Projects from '../components/mainComponents/projects/projects';
 
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
@@ -55,11 +55,10 @@ export default function Home() {
             </div>
           </div>
         </animated.div>
-
         <TopMenu showMenu={!activePages.landing} />
-        <SideMenu width={windowMeasures.width} height={windowMeasures.height} showMenu={!activePages.landing} />
         <Portrait height={windowMeasures.height} clicked={onPhotoClickedEventHandler} landing={activePages.landing} />
-        <Background width={windowMeasures.width} height={windowMeasures.height}/>
+        {/* <Background width={windowMeasures.width} height={windowMeasures.height}/> */}
+        <Projects height={windowMeasures.height} show={activePages.projects} height={windowMeasures.height}/>
       </div>
     </React.Fragment >
   )

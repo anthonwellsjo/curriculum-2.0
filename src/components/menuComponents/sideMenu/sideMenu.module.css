@@ -3,13 +3,42 @@
   background-color: white;
   height: 1000px;
   width: 1000px;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
-.menuItem{
-  text-align: right;
+.menuItem {
+  font-family: Abril Fatface;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
-.menuHolder{
+.header {
   position: absolute;
+  top: 5%;
+  left: 5%;
+  opacity: 0;
+}
+
+.menuHolder {
+  position: absolute;
+  text-align: left;
+  left: 20px;
+  top: 20%;
+  transition: all 0.5s;
+  background-color: hotpink;
+}
+
+.menuHolder:hover ~ .header {
+  opacity: 1;
+}
+
+.workList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }

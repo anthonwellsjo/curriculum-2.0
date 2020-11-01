@@ -34,11 +34,16 @@ const SideMenu = props => {
                 }} >
 
             </div>
-            <div className={classes.menuHolder}>
-                <ul>
-                    {jobs.map(p => {
+            <h2 className={classes.header}>Projects</h2>
+            <div className={classes.menuHolder}
+            style={{
+                transform: props.showMenu ? "translateX(0) rotate(0)" : `translateX(-${props.width}px) rotate(20deg)`,
+            }}>
+                
+                <ul className={classes.workList}>
+                    {jobs.map((p,i) => {
                         return (
-                            <li className={classes.menuItem}>{p.name}</li>
+                            <li key={i} className={classes.menuItem}>{p.name}</li>
                         )
                     })}
                 </ul>

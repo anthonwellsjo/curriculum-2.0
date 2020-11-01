@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 const InnerTextHolder = props => {
     return (
-        <div className={classnames(classes.div, props.classHolder)}>
+        <div style={{top: `${props.top}px`}} className={classnames(classes.div, props.classHolder)}>
             {props.children}
         </div>)
 }
