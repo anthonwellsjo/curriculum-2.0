@@ -1,6 +1,4 @@
 body {
-  font-family: helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial,
-    sans-serif;
   background: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -29,7 +27,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
   font-weight: 800;
   font-size: 22px;
   will-change: transform, opacity;
@@ -53,7 +50,7 @@ body {
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 100px;
+  top: 50px;
   left: 50px;
-  width: 100%;
+  width: 4%;
 }

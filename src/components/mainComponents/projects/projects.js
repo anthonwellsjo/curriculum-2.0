@@ -48,9 +48,10 @@ export default function Projects(props) {
   const pages = work.map(w => {
     return ({ style }) => <animated.div style={{ ...style, background: w.background }}>
       <div className="technologyHolder">
-
-          {w.technologies.map((t,i)=> <img style={{height: "5%", width: "5%", marginTop: "30px"}} key={i} src={t}/>)}
-
+        <Centralizer column>
+        <h3>Built with</h3>
+          {w.technologies.map((t,i)=> <img style={{width: "50px", marginTop: "30px"}} key={i} src={t}/>)}
+          </Centralizer>
       </div>
       <InnerTextHolder top={props.height * 0.7}>
         <h2 style={{ textAlign: "center" }}>{w.name}</h2>
