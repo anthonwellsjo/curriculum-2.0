@@ -16,7 +16,7 @@ const trans1 = (x, y) => `translate3d(${x / 10}px,${y / 10}px,0)`
 export default function Home() {
   const [backgroundAnimProps, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 10, tension: 550, friction: 140 } }))
   const [activePages, setActivePages] = useState({ landing: true, projects: false });
-  const [windowMeasures, setWindowMeasures] = useState({ width: window.innerWidth, height: window.innerHeight });
+  const [windowMeasures, setWindowMeasures] = useState({ width: 0, height: 0 });
   const animationProps = useSpring({ opacity: activePages.landing ? 1 : 0 })
 
   const onScreenSizeChanged = () => {
@@ -35,6 +35,7 @@ export default function Home() {
 
   useEffect(() => {
     window.addEventListener("resize", onScreenSizeChanged);
+    setWindowMeasures({ width: window.innerWidth, height: window.innerHeight });
   }, [])
 
   return (
@@ -58,7 +59,7 @@ export default function Home() {
         <TopMenu showMenu={!activePages.landing} />
         <Portrait height={windowMeasures.height} clicked={onPhotoClickedEventHandler} landing={activePages.landing} />
         {/* <Background width={windowMeasures.width} height={windowMeasures.height}/> */}
-        <Projects height={windowMeasures.height} show={activePages.projects} height={windowMeasures.height}/>
+        <Projects height={windowMeasures.height} show={activePages.projects} height={windowMeasures.height} />
       </div>
     </React.Fragment >
   )
