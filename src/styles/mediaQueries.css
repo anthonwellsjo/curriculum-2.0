@@ -2,7 +2,7 @@
 
 @media (min-width: 526px) {
   h1 {
-    font-size: 50px;
+    font-size: 25px;
   }
   h2 {
     font-size: 35px;
@@ -73,8 +73,7 @@
   .componentHolder {
     width: 200px;
   }
-  .profileComponentHolder {
-  }
+  
   .profileHeader {
     margin-left: -10px;
     margin-top: -20px;
@@ -82,9 +81,5 @@
   }
   .profileHeaderText {
     font-size: 50px;
-  }
-  .profilePic {
-    margin-right: -40px;
-    margin-top: -10px;
   }
 }

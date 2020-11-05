@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-  pathPrefix: "/curriculum",
+  pathPrefix: "/curriculum-2.0",
   plugins: [
     {
       resolve: `gatsby-plugin-google-fonts`,
@@ -16,6 +16,8 @@ module.exports = {
           `Kanit`,
           `Epilogue`,
           `Maven Pro`,
+          `Playfair Display`,
+          `Abril Fatface`,
           `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
         ],
         display: 'swap'

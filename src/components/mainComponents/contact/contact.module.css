@@ -1,34 +1,31 @@
 .icon {
-  width: 80px;
-  height: 80px;
+  width: 35px;
+  height: 35px;
   box-shadow: none;
+  
+  filter: grayscale();
+  cursor: pointer;
+}
+
+.icon:hover {
+  filter: none;
+}
+
+.icon.small{
+  width: 20px;
+  height: 20px;
+}
+
+.contactContainer{
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media (max-width: 525px) {
   .icon {
-    width: 50px;
-    height: 50px;
-  }
-}
-
-.icon:hover {
-  animation: move 0.8s infinite ease-in-out;
-}
-
-@keyframes move {
-  0% {
-    transform: rotate(0);
-  }
-  25% {
-    transform: rotate(-10deg);
-  }
-  50% {
-    transform: rotate(0);
-  }
-  75% {
-    transform: rotate(-10deg);
-  }
-  100% {
-    transform: rotate(0);
+    width: 10px;
+    height: 10px;
   }
 }

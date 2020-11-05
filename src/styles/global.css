@@ -1,13 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
 h1,
 h2,
 h3,
 h4 {
-  font-family: Maven Pro;
+  font-family: Playfair Display;
+  letter-spacing: 2px;
   font-weight: 500;
-  text-transform: lowercase;
 }
 p {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Playfair Display;
 }
 a {
   font-family: Maven Pro;
@@ -24,45 +28,25 @@ a:hover {
   color: grey;
   transition: color 0.3s;
 }
-section,
-img {
-  box-shadow: 3px 5px 5px #646e68;
-  transition: box-shadow 0.3s;
-}
-section:hover,
-img:hover,
-header:hover {
-  box-shadow: 0px 0px 0px #646e68;
-  transition: box-shadow 0.3s;
-}
 
 ul {
   list-style-type: none;
 }
 
-header {
-  box-shadow: 2px 2px 5px #646e68;
-  transition: box-shadow 0.3s;
-  background-color: #cde7b0;
-  padding-left: 10px;
-  height: 100%;
-  width: 100%;
-}
-
-figure:hover {
-  box-shadow: 1px 1px 3px #646e68;
-  transition: box-shadow 0.3s;
-}
 figure {
   box-shadow: 0px 0px 0px #646e68;
-  transition: box-shadow 0.3s;
 }
 
 body,
 html {
-  overflow-x: hidden;
+  overflow: hidden;
+  margin: 0;
 }
 
 body {
-  background-color: #dba159;
+  
+  overflow: hidden;
+  margin: 0;
 }
+
+
