@@ -4,7 +4,6 @@ import Profile from '../components/mainComponents/profile/profile'
 import Centralizer from '../components/layout/centralizer/centralizer';
 import classes from "./index.module.css";
 import Portrait from "../components/mainComponents/portrait/portrait";
-import Background from '../components/mainComponents/background/background';
 import TopMenu from '../components/menuComponents/topMenu/topMenu';
 import Projects from '../components/mainComponents/projects/projects';
 
@@ -14,10 +13,12 @@ const trans1 = (x, y) => `translate3d(${x / 10}px,${y / 10}px,0)`
 
 
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(true);
+
   const [backgroundAnimProps, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 10, tension: 550, friction: 140 } }))
   const [activePages, setActivePages] = useState({ landing: true, projects: false });
   const [windowMeasures, setWindowMeasures] = useState({ width: 0, height: 0 });
-  const animationProps = useSpring({ opacity: activePages.landing ? 1 : 0 })
+  const animationProps = useSpring({ opacity: activePages.landing ? 1 : 0 });
 
   const onScreenSizeChanged = () => {
     setWindowMeasures({ width: window.innerWidth, height: window.innerHeight })

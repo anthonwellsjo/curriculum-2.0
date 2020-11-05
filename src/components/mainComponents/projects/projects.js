@@ -34,7 +34,7 @@ const work = [
 
 ]
 
-
+let clickBlocker = false;
 
 
 // const pagestemp = [
@@ -49,9 +49,9 @@ export default function Projects(props) {
     return ({ style }) => <animated.div style={{ ...style, background: w.background }}>
       <div className="technologyHolder">
         <Centralizer column>
-        <h3>Built with</h3>
-          {w.technologies.map((t,i)=> <img style={{width: "50px", marginTop: "30px"}} key={i} src={t}/>)}
-          </Centralizer>
+          <h3>Built with</h3>
+          {w.technologies.map((t, i) => <img style={{ width: "50px", marginTop: "30px" }} key={i} src={t} />)}
+        </Centralizer>
       </div>
       <InnerTextHolder top={props.height * 0.7}>
         <h2 style={{ textAlign: "center" }}>{w.name}</h2>
@@ -61,12 +61,20 @@ export default function Projects(props) {
   });
 
   const [index, set] = useState(0)
-  const onClick = useCallback(() => set(state => (state + 1) % 3), [])
+  const onClick = () => {
+    if (!clickBlocker) {
+      console.log("click");
+      clickBlocker = true;
+      set(state => (state + 1) % 3)
+      setTimeout(() => { clickBlocker = false }, 1000);
+    }
+    
+  };
   const transitions = useTransition(index, p => p, {
     from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
     enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
     leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
-  })
+  });
 
 
 
