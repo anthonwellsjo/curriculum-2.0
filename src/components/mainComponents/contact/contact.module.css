@@ -23,9 +23,15 @@
   justify-content: space-between;
 }
 
-@media (max-width: 525px) {
+@media(max-width: 485px){
   .icon {
-    width: 10px;
-    height: 10px;
+    width: 25px;
+    height: 25px;
+  }
+}
+@media(max-width: 285px){
+  .icon {
+    width: 20px;
+    height: 20px;
   }
 }

@@ -44,24 +44,36 @@
   box-shadow: 1px 1px 80px rgb(58, 55, 55);
 }
 
+@media (max-width: 600px){
+  .frostedGlass{
+    width: 90%;
+  }
+}
+
 .presentationText {
   text-align: center;
   letter-spacing: .7px;
 }
 
-@media (min-width: 700px) {
-  .img {
-    width: 200px;
-  }
-}
+/* MEDIA QUERIES*/
 
-@media (max-width: 699px) {
-  .img {
-    width: 200px;
-  }
+@media(max-height: 750px){
+  
 }
-@media (max-width: 400px) {
-  .img {
-    width: 150px;
-  }
+@media(max-height: 700px){
+  
+}
+@media(max-height: 650px){
+  
+}
+@media(max-height: 600px){
+}
+@media(max-height: 535px){
+  
+}
+@media(max-height: 450px){
+  
+}
+@media(max-height: 390px){
+  
 }
